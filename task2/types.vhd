@@ -29,6 +29,8 @@
 
 library IEEE;
 use IEEE.std_logic_1164.all;
+use IEEE.std_logic_unsigned.all;
+
 
 package types is
     subtype bit_t is std_logic;

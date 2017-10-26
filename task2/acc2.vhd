@@ -34,8 +34,7 @@ entity acc is
         en     : out bit_t;             -- Request signal for data.
         we     : out bit_t;             -- Read/Write signal for data.
         start  : in  bit_t;
-        finish : out bit_t
-    );
+        finish : out bit_t );
 end acc;
 
 --------------------------------------------------------------------------------
@@ -47,6 +46,12 @@ architecture rtl of acc is
 -- All internal signals are defined here
 
 begin
+
+
+
+
+
+    
 
 -- Template for a process
 --    myprocess : process(clk)
