@@ -52,8 +52,8 @@ type inv_states is (ACC_IDLE, ACC_READ, ACC_WRITE);
 signal acc_state : inv_states  := ACC_IDLE;
 signal acc_next_state : inv_states  := ACC_IDLE;
 
-constant RAM_BLOCK_SIZE : integer := 50688 - 1; 
-constant WRITE_BLOCK_START_ADDR : halfword_t := x"6300"; 
+constant RAM_BLOCK_SIZE : integer := 50688 - 1;
+constant WRITE_BLOCK_START_ADDR : halfword_t := x"6300";
 
 signal write_ptr        : halfword_t := WRITE_BLOCK_START_ADDR;
 signal next_write_ptr   : halfword_t := WRITE_BLOCK_START_ADDR;
@@ -95,10 +95,10 @@ begin
   case(acc_state) is
 
     when ACC_IDLE =>
-      
+
       en <= '0';
 
-      if start = '1' then 
+      if start = '1' then
         acc_next_state <= ACC_READ;
       end if;
 
@@ -112,12 +112,12 @@ begin
 
     when ACC_WRITE =>
 
-      we <= '1'; 
+      we <= '1';
       addr <= write_ptr;
       next_write_ptr <= write_ptr + 1;
       pixel_out <= (x"FFFFFFFF" - dataR);
 
-      if write_ptr = RAM_BLOCK_SIZE then 
+      if write_ptr = RAM_BLOCK_SIZE then
         acc_next_state <= ACC_IDLE;
         finish <= '1';
       end if;
@@ -129,7 +129,7 @@ begin
 
   end case;
 
-  
+
 end process inv_state_logic;
 
 
