@@ -57,7 +57,7 @@ architecture rtl of acc is
 
 
 -- All internal signals are defined here
-type inv_states is (ACC_IDLE, ACC_INIT, ACC_CALC, ACC_INIT_SHIFT_IN, ACC_INIT_SHIFT_UP, ACC_SHIFT_IN, ACC_SHIFT_UP, ACC_WRITE, ACC_STOP);
+type inv_states is (ACC_IDLE, ACC_INIT, ACC_CALC, ACC_INIT_SHIFT_IN, ACC_INIT_SHIFT_UP, ACC_SHIFT_IN, ACC_SHIFT_UP, ACC_WRITE);
 type img_calc_buf_t is array (0 to IMG_BUF_DEPTH) of std_logic_vector(IMG_BIT_COL_WIDH downto 0);
 
 signal acc_state : inv_states  := ACC_IDLE;
@@ -121,7 +121,6 @@ begin
     elsif result_shift_en = '1' then
       img_result_reg <= img_result_reg(IMG_BIT_COL_WIDH - 32 downto 0) & x"00000000";
     end if;
-
   end if;
 end process;
 
