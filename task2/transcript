@@ -5209,3 +5209,517 @@ do recomAndRun.do
 # ** Failure: Processed image has been saved to: pic1.pgm_result.pgm
 #    Time: 4126320 ns  Iteration: 3  Process: /testbench/Memory/line__114 File: memory2.vhd
 # Break in Subprogram WriteImage at memory2.vhd line 148
+do recomAndRun.do
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:21:31 on Nov 09,2017
+# vcom -reportprogress 300 types.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling package types
+# -- Compiling package body types
+# -- Loading package types
+# End time: 17:21:31 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:21:31 on Nov 09,2017
+# vcom -reportprogress 300 clock.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity clock
+# -- Compiling architecture behaviour of clock
+# End time: 17:21:31 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:21:31 on Nov 09,2017
+# vcom -reportprogress 300 memory2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity memory2
+# -- Compiling architecture behaviour of memory2
+# End time: 17:21:31 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:21:31 on Nov 09,2017
+# vcom -reportprogress 300 acc2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package types
+# -- Compiling entity acc
+# -- Compiling architecture rtl of acc
+# ** Error: acc2.vhd(163): near "(": (vcom-1576) expecting ')'.
+# ** Error: acc2.vhd(323): VHDL Compiler exiting
+# End time: 17:21:31 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: /home/thor/intelFPGA_pro/17.0/modelsim_ase/linuxaloem/vcom failed.
+# Error in macro ./compile.do line 6
+# /home/thor/intelFPGA_pro/17.0/modelsim_ase/linuxaloem/vcom failed.
+#     while executing
+# "vcom acc2.vhd"
+do recomAndRun.do
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:26:20 on Nov 09,2017
+# vcom -reportprogress 300 types.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling package types
+# -- Compiling package body types
+# -- Loading package types
+# End time: 17:26:20 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:26:20 on Nov 09,2017
+# vcom -reportprogress 300 clock.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity clock
+# -- Compiling architecture behaviour of clock
+# End time: 17:26:20 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:26:20 on Nov 09,2017
+# vcom -reportprogress 300 memory2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity memory2
+# -- Compiling architecture behaviour of memory2
+# End time: 17:26:20 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:26:20 on Nov 09,2017
+# vcom -reportprogress 300 acc2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package types
+# -- Compiling entity acc
+# -- Compiling architecture rtl of acc
+# End time: 17:26:20 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:26:20 on Nov 09,2017
+# vcom -reportprogress 300 test2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package types
+# -- Compiling entity testbench
+# -- Compiling architecture structure of testbench
+# End time: 17:26:20 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Loading work.types(body)
+# Loading work.testbench(structure)
+# Loading work.clock(behaviour)
+# Loading work.acc(rtl)
+# Loading work.memory2(behaviour)
+# ** Failure: Processed image has been saved to: pic1.pgm_result.pgm
+#    Time: 4126320 ns  Iteration: 3  Process: /testbench/Memory/line__114 File: memory2.vhd
+# Break in Subprogram WriteImage at memory2.vhd line 148
+do recomAndRun.do
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:29:36 on Nov 09,2017
+# vcom -reportprogress 300 types.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling package types
+# -- Compiling package body types
+# -- Loading package types
+# End time: 17:29:36 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:29:36 on Nov 09,2017
+# vcom -reportprogress 300 clock.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity clock
+# -- Compiling architecture behaviour of clock
+# End time: 17:29:36 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:29:36 on Nov 09,2017
+# vcom -reportprogress 300 memory2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity memory2
+# -- Compiling architecture behaviour of memory2
+# End time: 17:29:36 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:29:36 on Nov 09,2017
+# vcom -reportprogress 300 acc2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package types
+# -- Compiling entity acc
+# -- Compiling architecture rtl of acc
+# ** Warning: acc2.vhd(165): (vcom-1272) Length of expected is 16; length of actual is 8.
+# ** Warning: acc2.vhd(166): (vcom-1272) Length of expected is 16; length of actual is 8.
+# ** Warning: acc2.vhd(167): (vcom-1272) Length of expected is 16; length of actual is 8.
+# ** Warning: acc2.vhd(184): (vcom-1272) Length of type "byte_t" is 8; length of operand is 16.
+# End time: 17:29:36 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 4
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:29:36 on Nov 09,2017
+# vcom -reportprogress 300 test2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package types
+# -- Compiling entity testbench
+# -- Compiling architecture structure of testbench
+# End time: 17:29:36 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Loading work.types(body)
+# Loading work.testbench(structure)
+# Loading work.clock(behaviour)
+# Loading work.acc(rtl)
+# Loading work.memory2(behaviour)
+# ** Fatal: (vsim-3420) Array lengths do not match. Left is 16 (15 downto 0). Right is 8 (7 downto 0).
+#    Time: 22320 ns  Iteration: 1  Process: /testbench/Accelerator/sobel_reg File: acc2.vhd
+# Fatal error in ForLoop calcLoop at acc2.vhd line 165
+# 
+# HDL call sequence:
+# Stopped at acc2.vhd 165 ForLoop calcLoop
+# 
+do recomAndRun.do
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:31:16 on Nov 09,2017
+# vcom -reportprogress 300 types.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling package types
+# -- Compiling package body types
+# -- Loading package types
+# End time: 17:31:16 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:31:16 on Nov 09,2017
+# vcom -reportprogress 300 clock.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity clock
+# -- Compiling architecture behaviour of clock
+# End time: 17:31:16 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:31:16 on Nov 09,2017
+# vcom -reportprogress 300 memory2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity memory2
+# -- Compiling architecture behaviour of memory2
+# End time: 17:31:16 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:31:16 on Nov 09,2017
+# vcom -reportprogress 300 acc2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package types
+# -- Compiling entity acc
+# -- Compiling architecture rtl of acc
+# ** Warning: acc2.vhd(169): (vcom-1272) Length of expected is 8; length of actual is 16.
+# ** Warning: acc2.vhd(169): (vcom-1167) Index value 14 (of type work.types.byte_t) is out of range 7 downto 0.
+# End time: 17:31:16 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:31:16 on Nov 09,2017
+# vcom -reportprogress 300 test2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package types
+# -- Compiling entity testbench
+# -- Compiling architecture structure of testbench
+# End time: 17:31:16 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Loading work.types(body)
+# Loading work.testbench(structure)
+# Loading work.clock(behaviour)
+# Loading work.acc(rtl)
+# Loading work.memory2(behaviour)
+# ** Fatal: (vsim-3471) Slice range (14 downto 0) does not belong to the prefix index range (7 downto 0).
+#    Time: 22320 ns  Iteration: 1  Process: /testbench/Accelerator/sobel_reg File: acc2.vhd
+# Fatal error in ForLoop calcLoop at acc2.vhd line 169
+# 
+# HDL call sequence:
+# Stopped at acc2.vhd 169 ForLoop calcLoop
+# 
+do recomAndRun.do
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:33:40 on Nov 09,2017
+# vcom -reportprogress 300 types.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling package types
+# -- Compiling package body types
+# -- Loading package types
+# End time: 17:33:40 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:33:40 on Nov 09,2017
+# vcom -reportprogress 300 clock.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity clock
+# -- Compiling architecture behaviour of clock
+# End time: 17:33:40 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:33:40 on Nov 09,2017
+# vcom -reportprogress 300 memory2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity memory2
+# -- Compiling architecture behaviour of memory2
+# End time: 17:33:40 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:33:40 on Nov 09,2017
+# vcom -reportprogress 300 acc2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package types
+# -- Compiling entity acc
+# -- Compiling architecture rtl of acc
+# ** Warning: acc2.vhd(169): (vcom-1272) Length of expected is 8; length of actual is 9.
+# End time: 17:33:40 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:33:40 on Nov 09,2017
+# vcom -reportprogress 300 test2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package types
+# -- Compiling entity testbench
+# -- Compiling architecture structure of testbench
+# End time: 17:33:40 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Loading work.types(body)
+# Loading work.testbench(structure)
+# Loading work.clock(behaviour)
+# Loading work.acc(rtl)
+# Loading work.memory2(behaviour)
+# ** Fatal: (vsim-3420) Array lengths do not match. Left is 8 (7 downto 0). Right is 9 (8 downto 0).
+#    Time: 22320 ns  Iteration: 1  Process: /testbench/Accelerator/sobel_reg File: acc2.vhd
+# Fatal error in ForLoop calcLoop at acc2.vhd line 169
+# 
+# HDL call sequence:
+# Stopped at acc2.vhd 169 ForLoop calcLoop
+# 
+do recomAndRun.do
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:34:20 on Nov 09,2017
+# vcom -reportprogress 300 types.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling package types
+# -- Compiling package body types
+# -- Loading package types
+# End time: 17:34:21 on Nov 09,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:34:21 on Nov 09,2017
+# vcom -reportprogress 300 clock.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity clock
+# -- Compiling architecture behaviour of clock
+# End time: 17:34:21 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:34:21 on Nov 09,2017
+# vcom -reportprogress 300 memory2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity memory2
+# -- Compiling architecture behaviour of memory2
+# End time: 17:34:21 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:34:21 on Nov 09,2017
+# vcom -reportprogress 300 acc2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package types
+# -- Compiling entity acc
+# -- Compiling architecture rtl of acc
+# ** Warning: acc2.vhd(169): (vcom-1272) Length of expected is 8; length of actual is 9.
+# End time: 17:34:21 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:34:21 on Nov 09,2017
+# vcom -reportprogress 300 test2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package types
+# -- Compiling entity testbench
+# -- Compiling architecture structure of testbench
+# End time: 17:34:21 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Loading work.types(body)
+# Loading work.testbench(structure)
+# Loading work.clock(behaviour)
+# Loading work.acc(rtl)
+# Loading work.memory2(behaviour)
+# ** Fatal: (vsim-3420) Array lengths do not match. Left is 8 (7 downto 0). Right is 9 (8 downto 0).
+#    Time: 22320 ns  Iteration: 1  Process: /testbench/Accelerator/sobel_reg File: acc2.vhd
+# Fatal error in ForLoop calcLoop at acc2.vhd line 169
+# 
+# HDL call sequence:
+# Stopped at acc2.vhd 169 ForLoop calcLoop
+# 
+do recomAndRun.do
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:34:50 on Nov 09,2017
+# vcom -reportprogress 300 types.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling package types
+# -- Compiling package body types
+# -- Loading package types
+# End time: 17:34:50 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:34:50 on Nov 09,2017
+# vcom -reportprogress 300 clock.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity clock
+# -- Compiling architecture behaviour of clock
+# End time: 17:34:50 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:34:50 on Nov 09,2017
+# vcom -reportprogress 300 memory2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity memory2
+# -- Compiling architecture behaviour of memory2
+# End time: 17:34:50 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:34:50 on Nov 09,2017
+# vcom -reportprogress 300 acc2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package types
+# -- Compiling entity acc
+# -- Compiling architecture rtl of acc
+# End time: 17:34:50 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 17:34:50 on Nov 09,2017
+# vcom -reportprogress 300 test2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package types
+# -- Compiling entity testbench
+# -- Compiling architecture structure of testbench
+# End time: 17:34:50 on Nov 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Loading work.types(body)
+# Loading work.testbench(structure)
+# Loading work.clock(behaviour)
+# Loading work.acc(rtl)
+# Loading work.memory2(behaviour)
+# ** Failure: Processed image has been saved to: pic1.pgm_result.pgm
+#    Time: 4126320 ns  Iteration: 3  Process: /testbench/Memory/line__114 File: memory2.vhd
+# Break in Subprogram WriteImage at memory2.vhd line 148
