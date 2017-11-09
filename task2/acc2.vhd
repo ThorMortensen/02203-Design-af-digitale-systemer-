@@ -46,10 +46,10 @@ end acc;
 architecture rtl of acc is
 
   constant IMG_HIGHT          : integer := 288;
-  constant IMG_WIDTH          : integer := 352;
+  constant IMG_WIDTH          : integer := 352 - 1;
 
   constant IMG_BUF_DEPTH      : integer := 3 - 1;
-  constant IMG_BUF_WIDTH      : integer := (IMG_WIDTH / 4) - 1; -- 4 pixels (bytes pr word)
+  constant IMG_BUF_WIDTH      : integer := ((IMG_WIDTH + 1) / 4) - 1; -- 4 pixels (bytes pr word)
   -- constant IMG_BIT_COL_WIDH   : integer := (IMG_WIDTH * 8) - 1; -- 8 bits per pixel (byte)
 
   constant RAM_BLOCK_SIZE : integer := 50688 - 1;
@@ -58,7 +58,8 @@ architecture rtl of acc is
 
 -- All internal signals are defined here
 type inv_states is (ACC_IDLE, ACC_INIT, ACC_CALC, ACC_INIT_SHIFT_IN, ACC_INIT_SHIFT_UP, ACC_SHIFT_IN, ACC_SHIFT_UP, ACC_WRITE);
-type img_byte_arr_t is array (0 to IMG_WIDTH - 1) of byte_t;
+type img_byte_arr_t is array (0 to IMG_WIDTH) of byte_t;
+type img_word_t_byte_arr_t is array (0 to 3) of byte_t;
 type img_calc_buf_t is array (0 to IMG_BUF_DEPTH) of img_byte_arr_t;
 
 signal acc_state : inv_states  := ACC_IDLE;
@@ -93,22 +94,22 @@ signal we_intl : std_logic := '0';
 
 signal img_result_word : word_t := (others => '0'); --downto IMG_WIDTH - 4);
 
--- function wort_t_to_byte_arr (slv : in std_logic_vector) returns array (0 to IMG_WIDTH - 1) of std_logic_vector(7 downto 0) is
---     variable result : census_line;
--- begin
---     for i in 0 to 15 loop
---         result(i) <= slv(8*i+7 downto i);
---     end loop;
---     return result;
--- end function;
+function wort_t_to_byte_arr (slv : in word_t) return img_word_t_byte_arr_t is
+    variable result : img_word_t_byte_arr_t;
+begin
+    for i in 0 to 4 loop
+        result(i) := slv(8*i+7 downto i);
+    end loop;
+    return result;
+end function;
 
 
 begin
 
- img_result_word <= img_result_reg(IMG_WIDTH - 1) &
+ img_result_word <= img_result_reg(IMG_WIDTH - 0) &
+                    img_result_reg(IMG_WIDTH - 1) &
                     img_result_reg(IMG_WIDTH - 2) &
-                    img_result_reg(IMG_WIDTH - 3) &
-                    img_result_reg(IMG_WIDTH - 4);
+                    img_result_reg(IMG_WIDTH - 3);
 
 
 
@@ -117,7 +118,11 @@ shift_in : process(clk)
 begin
   if rising_edge(clk) then
     if img_shift_in_en = '1' then
-      img_calc_buf(0) <= img_calc_buf(0)(IMG_WIDTH - 4) & pixel_in;
+      img_calc_buf(0) <= img_calc_buf(0)(0 to IMG_WIDTH - 4) & wort_t_to_byte_arr(pixel_in) ;
+      -- img_calc_buf(0) <= pixel_in(7 downto 0);
+      -- img_calc_buf(0) <= pixel_in(15 downto 8);
+      -- img_calc_buf(0) <= pixel_in(23 downto 16);
+      -- img_calc_buf(0) <= pixel_in(32 downto 24);
     end if;
   end if;
 end process;
