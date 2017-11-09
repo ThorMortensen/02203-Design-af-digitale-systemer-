@@ -50,7 +50,7 @@ architecture rtl of acc is
 
   constant IMG_BUF_DEPTH      : integer := 3 - 1;
   constant IMG_BUF_WIDTH      : integer := (IMG_WIDTH / 4) - 1; -- 4 pixels (bytes pr word)
-  constant IMG_BIT_COL_WIDH   : integer := (IMG_WIDTH * 8) - 1; -- 8 bits per pixel (byte)
+  -- constant IMG_BIT_COL_WIDH   : integer := (IMG_WIDTH * 8) - 1; -- 8 bits per pixel (byte)
 
   constant RAM_BLOCK_SIZE : integer := 50688 - 1;
   constant WRITE_BLOCK_START_ADDR : halfword_t := x"6300";
@@ -58,7 +58,8 @@ architecture rtl of acc is
 
 -- All internal signals are defined here
 type inv_states is (ACC_IDLE, ACC_INIT, ACC_CALC, ACC_INIT_SHIFT_IN, ACC_INIT_SHIFT_UP, ACC_SHIFT_IN, ACC_SHIFT_UP, ACC_WRITE);
-type img_calc_buf_t is array (0 to IMG_BUF_DEPTH) of std_logic_vector(IMG_BIT_COL_WIDH downto 0);
+type img_byte_arr_t is array (0 to IMG_WIDTH - 1) of byte_t;
+type img_calc_buf_t is array (0 to IMG_BUF_DEPTH) of img_byte_arr_t;
 
 signal acc_state : inv_states  := ACC_IDLE;
 signal next_acc_state : inv_states  := ACC_IDLE;
@@ -69,8 +70,8 @@ signal next_write_ptr   : halfword_t := WRITE_BLOCK_START_ADDR;
 signal read_ptr         : halfword_t := (others => '0');
 signal next_read_ptr    : halfword_t := (others => '0');
 
-signal img_result_reg : std_logic_vector(IMG_BIT_COL_WIDH downto 0) := (others => '0');
-signal img_calc_buf   : img_calc_buf_t := (others => (others => '0'));
+signal img_result_reg : img_byte_arr_t := (others => (others => '0'));
+signal img_calc_buf   : img_calc_buf_t := (others => (others => (others => '0')));
 
 signal pixel_in       : word_t :=  (others => '0');
 
@@ -90,15 +91,33 @@ signal we_intl : std_logic := '0';
 
 -- signal img_shift_up_init_done : std_logic is std_logic_vector(to_unsigned(img_shift_up_cntr, 2 ));
 
-alias img_result_word : word_t is img_result_reg(IMG_BIT_COL_WIDH downto IMG_BIT_COL_WIDH - 31);
+signal img_result_word : word_t := (others => '0'); --downto IMG_WIDTH - 4);
+
+-- function wort_t_to_byte_arr (slv : in std_logic_vector) returns array (0 to IMG_WIDTH - 1) of std_logic_vector(7 downto 0) is
+--     variable result : census_line;
+-- begin
+--     for i in 0 to 15 loop
+--         result(i) <= slv(8*i+7 downto i);
+--     end loop;
+--     return result;
+-- end function;
+
 
 begin
+
+ img_result_word <= img_result_reg(IMG_WIDTH - 1) &
+                    img_result_reg(IMG_WIDTH - 2) &
+                    img_result_reg(IMG_WIDTH - 3) &
+                    img_result_reg(IMG_WIDTH - 4);
+
+
+
 
 shift_in : process(clk)
 begin
   if rising_edge(clk) then
     if img_shift_in_en = '1' then
-      img_calc_buf(0) <= img_calc_buf(0)(IMG_BIT_COL_WIDH - 32 downto 0) & pixel_in;
+      img_calc_buf(0) <= img_calc_buf(0)(IMG_WIDTH - 4) & pixel_in;
     end if;
   end if;
 end process;
@@ -114,12 +133,40 @@ begin
 end process;
 
 sobel_reg : process(clk)
+variable Dx : std_logic := '0';
+variable Dy : std_logic := '0';
+
 begin
   if rising_edge(clk) then
     if calc_en = '1' then
+      --
+      -- calcLoop : for i in 1 to IMG_WIDTH - 1 loop
+      --   Dx :=
+      --   (not img_calc_buf(2)(i - 1) + 1) +
+      --   (not (img_calc_buf(1)(i - 1)(6 downto 0) & '0') + 1) +
+      --   (not img_calc_buf(0)(i - 1) + 1) +
+      --
+      --   ( img_calc_buf(2)(i + 1)) +
+      --   ((img_calc_buf(1)(i + 1)(6 downto 0) & '0')) +
+      --   ( img_calc_buf(2)(i + 1));
+      --
+      --   Dy :=
+      --   (not img_calc_buf(2)(i - 1) + 1) +
+      --   (not(img_calc_buf(2)(i)(6 downto 0) & '0') + 1) +
+      --   (not img_calc_buf(2)(i + 1) + 1) +
+      --
+      --   ( img_calc_buf(0)(i - 1)) +
+      --   ((img_calc_buf(0)(i)(6 downto 0) & '0')) +
+      --   ( img_calc_buf(0)(i + 1));
+      --
+      --   img_result_reg(i) <= Dx + Dy;
+      --
+      -- end loop;
+
+
       img_result_reg <= img_calc_buf(1);
     elsif result_shift_en = '1' then
-      img_result_reg <= img_result_reg(IMG_BIT_COL_WIDH - 32 downto 0) & x"00000000";
+      img_result_reg <= img_result_reg(IMG_WIDTH - 4) & x"00000000";
     end if;
   end if;
 end process;
@@ -166,6 +213,7 @@ begin
   img_shift_in_en <= '0';
   img_shift_up_en <= '0';
   result_shift_en <= '0';
+  calc_en <= '0';
 
   case(acc_state) is
 
