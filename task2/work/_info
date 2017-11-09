@@ -9,8 +9,8 @@ z2
 cModel Technology
 Z0 d/home/thor/02203 Design af digitale systemer /task2
 Eacc
-Z1 w1510225973
-Z2 DPx4 work 5 types 0 22 fPN@cWCYYf6zZd:NFTa2L3
+Z1 w1510233317
+Z2 DPx4 work 5 types 0 22 ;oTF18dfJ]g^XERXi[A2n2
 Z3 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 Z4 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
 Z5 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
@@ -21,17 +21,18 @@ Z8 8acc2.vhd
 Z9 Facc2.vhd
 l0
 L28
-V;EoQQcID2>46c[HCX5;Wk3
+V1gW1fncG3f`K3YSDXGB?z2
 !s100 om0oNYQ7nIY:Rcfk=3T2R1
 Z10 OV;C;10.5c;63
 32
-Z11 !s110 1510225975
+Z11 !s110 1510233385
 !i10b 1
-Z12 !s108 1510225975.000000
-Z13 !s90 -reportprogress|300|acc2.vhd|
-!s107 acc2.vhd|
+Z12 !s108 1510233385.000000
+Z13 !s90 -reportprogress|300|-quiet|acc2.vhd|
+Z14 !s107 acc2.vhd|
 !i113 1
-Z14 tExplicit 1 CvgOpt 0
+Z15 o-quiet
+Z16 tExplicit 1 CvgOpt 0
 Artl
 R2
 R3
@@ -39,20 +40,21 @@ R4
 R5
 R6
 R7
-DEx4 work 3 acc 0 22 ;EoQQcID2>46c[HCX5;Wk3
+DEx4 work 3 acc 0 22 1gW1fncG3f`K3YSDXGB?z2
 l107
 L46
-Vb_b0eLM1ik2BQ94f3hg381
-!s100 YbH?`Z^M76CDo[ge<H<Ub1
+VgT3LT[oSh<PfGj?l3?[1l2
+!s100 4zg=727oVSl]U>M2]`RUE2
 R10
 32
-Z15 !s110 1510225942
+R11
 !i10b 1
-Z16 !s108 1510225942.000000
+R12
 R13
-!s107 acc2.vhd|
-!i113 1
 R14
+!i113 1
+R15
+R16
 Eclock
 Z17 w1507192880
 R6
@@ -62,24 +64,25 @@ Z18 8clock.vhd
 Z19 Fclock.vhd
 l0
 L21
-VIiD8>]oOE7Y8HoO6mI8VL1
+V8=6^5J:iejGKaQWU9@MGT3
 !s100 9J;oi<dTF:00lF7L[nR1K0
 R10
 32
 R11
 !i10b 1
 R12
-Z20 !s90 -reportprogress|300|clock.vhd|
+Z20 !s90 -reportprogress|300|-quiet|clock.vhd|
 Z21 !s107 clock.vhd|
 !i113 1
-R14
+R15
+R16
 Abehaviour
 R6
 R7
-DEx4 work 5 clock 0 22 IiD8>]oOE7Y8HoO6mI8VL1
+DEx4 work 5 clock 0 22 8=6^5J:iejGKaQWU9@MGT3
 l32
 L31
-VSnb37[jh:Q_e;kAfOZCRE3
+VWeGe4KdDK_b?SbAG6gLN`0
 !s100 A31^AL;?jAk^j0IdDa_Ba2
 R10
 32
@@ -89,7 +92,8 @@ R12
 R20
 R21
 !i113 1
-R14
+R15
+R16
 Ememory2
 Z22 w1507192872
 R5
@@ -102,27 +106,28 @@ Z23 8memory2.vhd
 Z24 Fmemory2.vhd
 l0
 L25
-VId49;SnYNA`ah=a_FejW_3
+Vi;BLPjjP>nJ6cS`E3KKO[2
 !s100 8ITc2A98hCa>d5J8d0X8?3
 R10
 32
 R11
 !i10b 1
 R12
-Z25 !s90 -reportprogress|300|memory2.vhd|
+Z25 !s90 -reportprogress|300|-quiet|memory2.vhd|
 Z26 !s107 memory2.vhd|
 !i113 1
-R14
+R15
+R16
 Abehaviour
 R5
 R3
 R4
 R6
 R7
-DEx4 work 7 memory2 0 22 Id49;SnYNA`ah=a_FejW_3
+DEx4 work 7 memory2 0 22 i;BLPjjP>nJ6cS`E3KKO[2
 l96
 L44
-V1Vb5g?TYlbcA3i2C<W`732
+VU9@m;O:KN:e:^_2K:PoN00
 !s100 5:@5C;?U?^7Sm9US9jQI@0
 R10
 32
@@ -132,7 +137,8 @@ R12
 R25
 R26
 !i113 1
-R14
+R15
+R16
 Etestbench
 Z27 w1509011930
 R3
@@ -145,59 +151,62 @@ Z28 8test2.vhd
 Z29 Ftest2.vhd
 l0
 L26
-VDGI05oa]Ed;>3jhO[h^`S1
+Vo8DWITe54L>=`ajAh^J]f3
 !s100 9aQSdNiCIBEo10eg4i7L91
 R10
 32
-R15
+R11
 !i10b 1
-R16
-Z30 !s90 -reportprogress|300|test2.vhd|
+R12
+Z30 !s90 -reportprogress|300|-quiet|test2.vhd|
 Z31 !s107 test2.vhd|
 !i113 1
-R14
+R15
+R16
 Astructure
 R3
 R4
 R2
 R6
 R7
-DEx4 work 9 testbench 0 22 DGI05oa]Ed;>3jhO[h^`S1
+DEx4 work 9 testbench 0 22 o8DWITe54L>=`ajAh^J]f3
 l80
 L29
-VTFB1_[n9ihg3dKRadozP<2
-!s100 08h5a5T0fS;T9d`D_eC>o2
+Ve:VWngY<CSGL:RN7UFILE2
+Z32 !s100 08h5a5T0fS;T9d`D_eC>o2
 R10
 32
-R15
+R11
 !i10b 1
-R16
+R12
 R30
 R31
 !i113 1
-R14
+R15
+R16
 Ptypes
 R3
 R4
 R6
 R7
-Z32 w1509010732
+Z33 w1509010732
 R0
-Z33 8types.vhd
-Z34 Ftypes.vhd
+Z34 8types.vhd
+Z35 Ftypes.vhd
 l0
 L35
-VfPN@cWCYYf6zZd:NFTa2L3
+V;oTF18dfJ]g^XERXi[A2n2
 !s100 KOUaBC<?_37J>EddB12]e1
 R10
 32
 R11
 !i10b 1
 R12
-Z35 !s90 -reportprogress|300|types.vhd|
-Z36 !s107 types.vhd|
+Z36 !s90 -reportprogress|300|-quiet|types.vhd|
+Z37 !s107 types.vhd|
 !i113 1
-R14
+R15
+R16
 Bbody
 R2
 R3
@@ -206,14 +215,15 @@ R6
 R7
 l0
 L64
-V:gW5BeYB^D=7NKV7d2^3I1
+VSR?Oi2hYngAYT6R3D?Wlm0
 !s100 U32;ohK9Z@66bYBS<okVC3
 R10
 32
 R11
 !i10b 1
 R12
-R35
 R36
+R37
 !i113 1
-R14
+R15
+R16

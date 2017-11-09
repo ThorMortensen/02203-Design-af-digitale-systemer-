@@ -118,14 +118,17 @@ shift_in : process(clk)
 begin
   if rising_edge(clk) then
     if img_shift_in_en = '1' then
-      img_calc_buf(0) <= img_calc_buf(0)(0 to IMG_WIDTH - 4) & wort_t_to_byte_arr(pixel_in) ;
-      -- img_calc_buf(0) <= pixel_in(7 downto 0);
-      -- img_calc_buf(0) <= pixel_in(15 downto 8);
-      -- img_calc_buf(0) <= pixel_in(23 downto 16);
-      -- img_calc_buf(0) <= pixel_in(32 downto 24);
+      img_calc_buf(0) <= img_calc_buf(0)(0 to IMG_WIDTH - 4) & pixel_in(31 downto 24) & pixel_in(23 downto 16) & pixel_in(15 downto 8) & pixel_in(7 downto 0);
     end if;
   end if;
 end process;
+
+
+-- img_calc_buf(0) <=  pixel_in(31 downto 24)  &
+--                     pixel_in(23 downto 16)  &
+--                     pixel_in(15 downto 8)   &
+--                     pixel_in(7 downto 0)    &
+--                     img_calc_buf(0)(0 to IMG_WIDTH - 4);
 
 shift_up : process(clk)
 begin
@@ -171,7 +174,7 @@ begin
 
       img_result_reg <= img_calc_buf(1);
     elsif result_shift_en = '1' then
-      img_result_reg <= img_result_reg(IMG_WIDTH - 4) & x"00000000";
+      img_result_reg <= img_result_reg(0 to IMG_WIDTH - 4) & x"00" & x"00" & x"00" & x"00";
     end if;
   end if;
 end process;
