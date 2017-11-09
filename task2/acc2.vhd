@@ -49,7 +49,7 @@ architecture rtl of acc is
   constant IMG_WIDTH          : integer := 352 - 1;
 
   constant IMG_BUF_DEPTH      : integer := 3 - 1;
-  constant IMG_BUF_WIDTH      : integer := ((IMG_WIDTH + 1) / 4) - 1; -- 4 pixels (bytes pr word)
+  constant IMG_BUF_WIDTH      : integer := ((IMG_WIDTH + 1) / 4); -- 4 pixels (bytes pr word)
   -- constant IMG_BIT_COL_WIDH   : integer := (IMG_WIDTH * 8) - 1; -- 8 bits per pixel (byte)
 
   constant RAM_BLOCK_SIZE : integer := 50688 - 1;
@@ -57,8 +57,8 @@ architecture rtl of acc is
 
 
 -- All internal signals are defined here
-type inv_states is (ACC_IDLE, ACC_INIT, ACC_CALC, ACC_INIT_SHIFT_IN, ACC_INIT_SHIFT_UP, ACC_SHIFT_IN, ACC_SHIFT_UP, ACC_WRITE);
-type img_byte_arr_t is array (0 to IMG_WIDTH) of byte_t;
+type inv_states is (ACC_IDLE, ACC_INIT, ACC_CALC, ACC_INIT_SHIFT_IN, ACC_INIT_SHIFT_UP, ACC_SHIFT_IN, ACC_SHIFT_UP, ACC_WRITE, ACC_WAIT);
+type img_byte_arr_t is array (IMG_WIDTH downto 0) of byte_t;
 type img_word_t_byte_arr_t is array (0 to 3) of byte_t;
 type img_calc_buf_t is array (0 to IMG_BUF_DEPTH) of img_byte_arr_t;
 
@@ -118,7 +118,7 @@ shift_in : process(clk)
 begin
   if rising_edge(clk) then
     if img_shift_in_en = '1' then
-      img_calc_buf(0) <= img_calc_buf(0)(0 to IMG_WIDTH - 4) & pixel_in(31 downto 24) & pixel_in(23 downto 16) & pixel_in(15 downto 8) & pixel_in(7 downto 0);
+      img_calc_buf(0) <= img_calc_buf(0)(IMG_WIDTH - 4 downto 0) & pixel_in(31 downto 24) & pixel_in(23 downto 16) & pixel_in(15 downto 8) & pixel_in(7 downto 0);
     end if;
   end if;
 end process;
@@ -141,40 +141,54 @@ begin
 end process;
 
 sobel_reg : process(clk)
-variable Dx : std_logic := '0';
-variable Dy : std_logic := '0';
+-- variable Dx : signed(7 downto 0) := (others => '0');
+-- variable Dy : signed(7 downto 0) := (others => '0');
+variable Dx : byte_t := (others => '0');
+variable Dy : byte_t := (others => '0');
+-- constant upper1 : signed( 7 downto 0) := (-1);
+-- constant upper2 : signed( 7 downto 0) := (-2);
+-- constant upper3 : signed( 7 downto 0) := (-1);
+--
+-- constant upper4 : signed( 7 downto 0) := (-1);
+-- constant upper5 : signed( 7 downto 0) := (-2);
+-- constant upper6 : signed( 7 downto 0) := (-1);
 
 begin
   if rising_edge(clk) then
     if calc_en = '1' then
-      --
-      -- calcLoop : for i in 1 to IMG_WIDTH - 1 loop
-      --   Dx :=
-      --   (not img_calc_buf(2)(i - 1) + 1) +
-      --   (not (img_calc_buf(1)(i - 1)(6 downto 0) & '0') + 1) +
-      --   (not img_calc_buf(0)(i - 1) + 1) +
-      --
-      --   ( img_calc_buf(2)(i + 1)) +
-      --   ((img_calc_buf(1)(i + 1)(6 downto 0) & '0')) +
-      --   ( img_calc_buf(2)(i + 1));
-      --
-      --   Dy :=
-      --   (not img_calc_buf(2)(i - 1) + 1) +
-      --   (not(img_calc_buf(2)(i)(6 downto 0) & '0') + 1) +
-      --   (not img_calc_buf(2)(i + 1) + 1) +
-      --
-      --   ( img_calc_buf(0)(i - 1)) +
-      --   ((img_calc_buf(0)(i)(6 downto 0) & '0')) +
-      --   ( img_calc_buf(0)(i + 1));
-      --
-      --   img_result_reg(i) <= Dx + Dy;
-      --
-      -- end loop;
+
+      calcLoop : for i in 1 to IMG_WIDTH - 1 loop
+        Dx :=
+        (img_calc_buf(2)(i + 1)) +
+        (img_calc_buf(1)(i + 1)(6 downto 0) & '0') +
+        (img_calc_buf(0)(i + 1)) -
+
+        (img_calc_buf(2)(i - 1)) -
+        (img_calc_buf(1)(i - 1)(6 downto 0) & '0') -
+        (img_calc_buf(0)(i - 1))
+        ;
+
+        Dy :=
+        (img_calc_buf(0)(i - 1)) +
+        (img_calc_buf(0)(i)(6 downto 0) & '0') +
+        (img_calc_buf(0)(i + 1)) -
 
 
-      img_result_reg <= img_calc_buf(1);
+        (img_calc_buf(2)(i - 1)) -
+        (img_calc_buf(2)(i)(6 downto 0) & '0') -
+        (img_calc_buf(2)(i + 1))
+        ;
+
+        img_result_reg(i) <= byte_t(abs(signed(Dx) + abs(signed(Dy))));--+ Dy;
+
+        -- img_result_reg(i) <= byte_t(abs(signed(Dy)));
+
+      end loop;
+
+
+      -- img_result_reg <= img_calc_buf(1);
     elsif result_shift_en = '1' then
-      img_result_reg <= img_result_reg(0 to IMG_WIDTH - 4) & x"00" & x"00" & x"00" & x"00";
+      img_result_reg <= img_result_reg(IMG_WIDTH - 4 downto 0) & x"00" & x"00" & x"00" & x"00";
     end if;
   end if;
 end process;
@@ -241,6 +255,7 @@ begin
       else
         next_img_shift_up_cntr  <= img_shift_up_cntr + 1;
         next_acc_state          <= ACC_INIT_SHIFT_IN;
+        img_shift_in_en <= '1';
       end if;
 
       next_img_shift_in_cntr  <= 0;
