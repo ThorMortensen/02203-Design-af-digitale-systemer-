@@ -148,6 +148,9 @@ sobel_reg : process(clk)
 
 variable Dx : STD_LOGIC_VECTOR(11 downto 0) := (others => '0');
 variable Dy : STD_LOGIC_VECTOR(11 downto 0) := (others => '0');
+variable mr1 : byte_t := (others => '0');
+variable mr2 : byte_t := (others => '0');
+variable mr3 : byte_t := (others => '0');
 -- constant upper1 : signed( 7 downto 0) := (-1);
 -- constant upper2 : signed( 7 downto 0) := (-2);
 -- constant upper3 : signed( 7 downto 0) := (-1);
@@ -161,26 +164,18 @@ begin
     if calc_en = '1' then
 
       calcLoop : for i in 1 to IMG_WIDTH - 1 loop
-        Dx :=
-        (img_calc_buf(2)(i + 1)) +
-        (img_calc_buf(1)(i + 1)(6 downto 0) & '0') +
-        (img_calc_buf(0)(i + 1)) -
 
-        (img_calc_buf(2)(i - 1)) -
-        (img_calc_buf(1)(i - 1)(6 downto 0) & '0') -
-        (img_calc_buf(0)(i - 1))
-        ;
+        mr1 := img_calc_buf(2)(i + 1) - img_calc_buf(2)(i - 1);
+        mr2 := img_calc_buf(1)(i + 1) - img_calc_buf(1)(i - 1);
+        mr3 := img_calc_buf(0)(i + 1) - img_calc_buf(0)(i - 1);
 
-        Dy :=
-        (img_calc_buf(0)(i - 1)) +
-        (img_calc_buf(0)(i)(6 downto 0) & '0') +
-        (img_calc_buf(0)(i + 1)) -
+        Dx := mr1 + (mr2(6 downto 0) & '0') + mr3;
 
         (img_calc_buf(2)(i - 1)) -
         (img_calc_buf(2)(i)(6 downto 0) & '0') -
         (img_calc_buf(2)(i + 1)) 
         ;
-        img_result_reg(i) <= byte_t( STD_LOGIC_VECTOR("abs"(signed(Dx)) + "abs"(signed(Dy)))(10 downto 3));--+ Dy;
+        img_result_reg(i) <= byte_t( STD_LOGIC_VECTOR(abs(signed(Dx)) + abs(signed(Dy)))(10 downto 3));--+ Dy;
         --img_result_reg(i) <= byte_t( (abs(signed(Dx) + abs(signed(Dy)))));--+ Dy;
 
         -- img_result_reg(i) <= byte_t(abs(signed(Dy)));
