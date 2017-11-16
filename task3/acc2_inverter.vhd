@@ -68,7 +68,7 @@ signal next_pixel_out: word_t:= (others=>'0');
 
 begin
 
-      dataW <= pixel_out;
+      dataW <= (x"FFFFFFFF" - dataR);--pixel_out;
 
 inv_state_reg : process (reset, clk)
 begin
@@ -76,15 +76,15 @@ begin
 
     acc_state <= ACC_IDLE;
     read_ptr <= (others => '0');
-    write_ptr <= (others => '0');
-	pixel_out <= (others =>'0');
+    write_ptr <= WRITE_BLOCK_START_ADDR;
+	--pixel_out <= (others =>'0');
 
   elsif (rising_edge(clk)) then
 
     acc_state <= acc_next_state;
     read_ptr <= next_read_ptr;
     write_ptr <= next_write_ptr;
-	pixel_out <= next_pixel_out;
+	--pixel_out <= next_pixel_out;
 
   end if;
 end process inv_state_reg;
@@ -100,7 +100,7 @@ begin
   next_write_ptr<=write_ptr;
   next_read_ptr<=read_ptr;
   addr<=read_ptr;
-  next_pixel_out <= pixel_out;
+  --pixel_out <= (x"FFFFFFFF" - dataR);
 
   case(acc_state) is
 
@@ -123,7 +123,6 @@ begin
       we <= '1';
       addr <= write_ptr;
       next_write_ptr <= write_ptr + 1;
-      pixel_out <= (x"FFFFFFFF" - dataR);
 
       if write_ptr = RAM_BLOCK_SIZE then
         acc_next_state <= ACC_IDLE;
