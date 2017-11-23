@@ -21,8 +21,10 @@ add wave -noupdate /testbench/Accelerator/we
 add wave -noupdate /testbench/Accelerator/dataW
 add wave -noupdate -radix hexadecimal /testbench/Memory/dataR
 add wave -noupdate -radix hexadecimal /testbench/Accelerator/img_result_reg
+add wave -noupdate /testbench/start
+add wave -noupdate /testbench/finish
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {40522122 ps} 0}
+WaveRestoreCursors {{Cursor 1} {4126400000 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 202
 configure wave -valuecolwidth 136
@@ -38,4 +40,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {40487182 ps} {42443833 ps}
+WaveRestoreZoom {4121877157 ps} {4130339337 ps}

@@ -57,7 +57,7 @@ architecture rtl of acc is
 
 
 -- All internal signals are defined here
-type inv_states is (ACC_IDLE, ACC_INIT, ACC_CALC, ACC_INIT_SHIFT_IN, ACC_INIT_SHIFT_UP, ACC_SHIFT_IN, ACC_SHIFT_UP, ACC_WRITE, ACC_WAIT);
+type inv_states is (ACC_IDLE, ACC_INIT, ACC_CALC, ACC_INIT_SHIFT_IN, ACC_INIT_SHIFT_UP, ACC_SHIFT_IN, ACC_SHIFT_UP, ACC_WRITE, ACC_END);
 type img_byte_arr_t is array (IMG_WIDTH downto 0) of byte_t;
 type img_word_t_byte_arr_t is array (0 to 3) of byte_t;
 type img_calc_buf_t is array (0 to IMG_BUF_DEPTH) of img_byte_arr_t;
@@ -75,6 +75,7 @@ signal img_result_reg : img_byte_arr_t := (others => (others => '0'));
 signal img_calc_buf   : img_calc_buf_t := (others => (others => (others => '0')));
 
 signal pixel_in       : word_t :=  (others => '0');
+signal next_pixel_in  : word_t :=  (others => '0');
 
 signal img_shift_in_en : std_logic := '0';
 signal img_shift_up_en : std_logic := '0';
@@ -140,24 +141,19 @@ begin
   end if;
 end process;
 
-sobel_reg : process(clk)
--- variable Dx : signed(7 downto 0) := (others => '0');
--- variable Dy : signed(7 downto 0) := (others => '0');
---variable Dx : byte_t := (others => '0');
---variable Dy : byte_t := (others => '0');
 
-variable Dx : STD_LOGIC_VECTOR(11 downto 0) := (others => '0');
-variable Dy : STD_LOGIC_VECTOR(11 downto 0) := (others => '0');
-variable mr1 : byte_t := (others => '0');
-variable mr2 : byte_t := (others => '0');
-variable mr3 : byte_t := (others => '0');
--- constant upper1 : signed( 7 downto 0) := (-1);
--- constant upper2 : signed( 7 downto 0) := (-2);
--- constant upper3 : signed( 7 downto 0) := (-1);
---
--- constant upper4 : signed( 7 downto 0) := (-1);
--- constant upper5 : signed( 7 downto 0) := (-2);
--- constant upper6 : signed( 7 downto 0) := (-1);
+sobel_reg : process(clk)
+variable Dx  : signed(10 downto 0) := (others => '0');
+variable Dy  : signed(10 downto 0) := (others => '0');
+variable mr1 : signed(10 downto 0) := (others => '0');
+variable mr2 : signed(10 downto 0) := (others => '0');
+variable mr3 : signed(10 downto 0) := (others => '0');
+
+variable mrRes : signed(10 downto 0) := (others => '0');
+variable mr5 : signed(10 downto 0) := (others => '0');
+variable mr6 : signed(10 downto 0) := (others => '0');
+
+constant CONVERTER : unsigned(10 downto 0) := (others => '0');
 
 begin
   if rising_edge(clk) then
@@ -165,20 +161,23 @@ begin
 
       calcLoop : for i in 1 to IMG_WIDTH - 1 loop
 
-        mr1 := img_calc_buf(2)(i + 1) - img_calc_buf(2)(i - 1);
-        mr2 := img_calc_buf(1)(i + 1) - img_calc_buf(1)(i - 1);
-        mr3 := img_calc_buf(0)(i + 1) - img_calc_buf(0)(i - 1);
+        mr1 := signed(unsigned(img_calc_buf(2)(i + 1)) + CONVERTER) - signed(unsigned(img_calc_buf(2)(i - 1)) + CONVERTER);
+        mr2 := signed(unsigned(img_calc_buf(1)(i + 1)) + CONVERTER) - signed(unsigned(img_calc_buf(1)(i - 1)) + CONVERTER);
+        mr3 := signed(unsigned(img_calc_buf(0)(i + 1)) + CONVERTER) - signed(unsigned(img_calc_buf(0)(i - 1)) + CONVERTER);
 
-        Dx := mr1 + (mr2(6 downto 0) & '0') + mr3;
+        Dx := mr1 + (mr2(9 downto 0) & '0') + mr3;
 
-        (img_calc_buf(2)(i - 1)) -
-        (img_calc_buf(2)(i)(6 downto 0) & '0') -
-        (img_calc_buf(2)(i + 1)) 
-        ;
-        img_result_reg(i) <= byte_t( STD_LOGIC_VECTOR(abs(signed(Dx)) + abs(signed(Dy)))(10 downto 3));--+ Dy;
-        --img_result_reg(i) <= byte_t( (abs(signed(Dx) + abs(signed(Dy)))));--+ Dy;
+        mr1 := signed(unsigned(img_calc_buf(2)(i - 1)) + CONVERTER) - signed(unsigned(img_calc_buf(0)(i - 1)) + CONVERTER);
+        mr2 := signed(unsigned(img_calc_buf(2)(i)    ) + CONVERTER) - signed(unsigned(img_calc_buf(0)(i)    ) + CONVERTER);
+        mr3 := signed(unsigned(img_calc_buf(2)(i + 1)) + CONVERTER) - signed(unsigned(img_calc_buf(0)(i + 1)) + CONVERTER);
 
-        -- img_result_reg(i) <= byte_t(abs(signed(Dy)));
+        Dy :=  mr1 + (mr2(9 downto 0) & '0') + mr3;
+
+        mrRes := abs(signed(Dx)) + abs(signed(Dy));
+
+        img_result_reg(i) <= byte_t( mrRes(10 downto 3) );--+ Dy;
+
+        -- img_result_reg(i) <= byte_t(abs(Dx(10 downto 3)));
 
       end loop;
 
@@ -190,25 +189,23 @@ begin
   end if;
 end process;
 
-
 inv_state_reg : process (reset, clk)
 begin
-  if (reset = '1') then
-
-    acc_state         <= ACC_IDLE;
-    read_ptr          <= (others => '0');
-    write_ptr         <= (others => '0');
-    img_shift_in_cntr <= 0;
-    img_shift_up_cntr <= 0;
-
-  elsif (rising_edge(clk)) then
-
-    acc_state         <= next_acc_state;
-    read_ptr          <= next_read_ptr;
-    write_ptr         <= next_write_ptr;
-    img_shift_in_cntr <= next_img_shift_in_cntr;
-    img_shift_up_cntr <= next_img_shift_up_cntr;
-
+  if (rising_edge(clk)) then
+    if (reset = '1') then
+      acc_state         <= ACC_IDLE;
+      read_ptr          <= (others => '0');
+      write_ptr         <= WRITE_BLOCK_START_ADDR;
+      img_shift_in_cntr <= 0;
+      img_shift_up_cntr <= 0;
+    else
+      pixel_in          <= next_pixel_in;
+      acc_state         <= next_acc_state;
+      read_ptr          <= next_read_ptr;
+      write_ptr         <= next_write_ptr;
+      img_shift_in_cntr <= next_img_shift_in_cntr;
+      img_shift_up_cntr <= next_img_shift_up_cntr;
+    end if;
   end if;
 end process inv_state_reg;
 
@@ -216,9 +213,9 @@ addr <= write_ptr when we_intl = '1' else read_ptr;
 dataW <= img_result_word;
 we <= we_intl;
 
-inv_state_logic : process (acc_state, start, img_shift_up_cntr, img_shift_in_cntr)
+inv_state_logic : process (acc_state, start, img_shift_up_cntr, img_shift_in_cntr, read_ptr, write_ptr, dataR, pixel_in)
 begin
-
+  next_pixel_in           <= pixel_in         ;
   next_acc_state          <= acc_state        ;
   next_read_ptr           <= read_ptr         ;
   next_write_ptr          <= write_ptr        ;
@@ -237,6 +234,7 @@ begin
   case(acc_state) is
 
     when ACC_IDLE =>
+      -- finish <= '1';
 
       en <= '0';
       next_img_shift_up_cntr <= 0;
@@ -264,7 +262,7 @@ begin
       else
         next_img_shift_in_cntr <= img_shift_in_cntr + 1;
         next_read_ptr <= read_ptr + 1;
-        pixel_in <= dataR;
+        next_pixel_in <= dataR;
         img_shift_in_en <= '1';
       end if;
 
@@ -287,7 +285,7 @@ begin
       else
         next_img_shift_in_cntr <= img_shift_in_cntr + 1;
         next_read_ptr <= read_ptr + 1;
-        pixel_in <= dataR;
+        next_pixel_in <= dataR;
         img_shift_in_en <= '1';
       end if;
 
@@ -311,9 +309,12 @@ begin
       end if;
 
       if img_shift_up_cntr = IMG_HIGHT then
-        next_acc_state <= ACC_IDLE;
-        finish <= '1';
+        next_acc_state <= ACC_END;
       end if;
+
+    when ACC_END =>
+      finish <= '1';
+
 
     when others =>
     null;
