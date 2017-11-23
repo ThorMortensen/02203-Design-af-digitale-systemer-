@@ -2315,3 +2315,5 @@ do recomAndRun.do
 # ** Failure: Processed image has been saved to: pic1.pgm_result.pgm
 #    Time: 4126400 ns  Iteration: 3  Process: /testbench/Memory/line__114 File: memory2.vhd
 # Break in Subprogram WriteImage at memory2.vhd line 148
+# End time: 16:02:43 on Nov 23,2017, Elapsed time: 5:11:34
+# Errors: 181, Warnings: 7
