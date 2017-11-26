@@ -17,6 +17,8 @@ add wave -noupdate -expand -group acc -radix unsigned /testbench/Accelerator/nex
 add wave -noupdate -expand -group acc -radix unsigned /testbench/Accelerator/read_ptr
 add wave -noupdate -expand -group acc -radix unsigned /testbench/Accelerator/next_read_ptr
 add wave -noupdate -expand -group acc -radix hexadecimal /testbench/Accelerator/pixel_out
+add wave -noupdate -expand -group acc -radix hexadecimal /testbench/Accelerator/next_pixel_out
+add wave -noupdate -expand -group acc -radix hexadecimal /testbench/Accelerator/next_pixel_in
 add wave -noupdate /testbench/Memory/en
 add wave -noupdate /testbench/Memory/we
 add wave -noupdate -radix decimal /testbench/Memory/addr

@@ -48,7 +48,7 @@ architecture rtl of acc is
 
 -- All internal signals are defined here
 
-type inv_states is (ACC_IDLE, ACC_READ, ACC_WRITE);
+type inv_states is (ACC_IDLE, ACC_READ, ACC_CALC,ACC_WRITE);
 
 signal acc_state : inv_states  := ACC_IDLE;
 signal acc_next_state : inv_states  := ACC_IDLE;
@@ -65,10 +65,13 @@ signal next_read_ptr    : halfword_t := (others => '0');
 signal pixel_out    : word_t :=  (others => '0');
 signal next_pixel_out: word_t:= (others=>'0');
 
+signal pixel_in    : word_t :=  (others => '0');
+signal next_pixel_in: word_t:= (others=>'0');
+
 
 begin
 
-      dataW <= (x"FFFFFFFF" - dataR);--pixel_out;
+      dataW <= (x"FFFFFFFF" - pixel_in);--pixel_out;
 
 inv_state_reg : process (reset, clk)
 begin
@@ -77,14 +80,16 @@ begin
     acc_state <= ACC_IDLE;
     read_ptr <= (others => '0');
     write_ptr <= WRITE_BLOCK_START_ADDR;
-	--pixel_out <= (others =>'0');
+	pixel_in <= (others => '0');
+	pixel_out <= (others =>'0');
 
   elsif (rising_edge(clk)) then
 
     acc_state <= acc_next_state;
     read_ptr <= next_read_ptr;
     write_ptr <= next_write_ptr;
-	--pixel_out <= next_pixel_out;
+	pixel_in <= next_pixel_in;
+	pixel_out <= next_pixel_out;
 
   end if;
 end process inv_state_reg;
@@ -100,7 +105,7 @@ begin
   next_write_ptr<=write_ptr;
   next_read_ptr<=read_ptr;
   addr<=read_ptr;
-  --pixel_out <= (x"FFFFFFFF" - dataR);
+  next_pixel_out<=pixel_out;-- <= (x"FFFFFFFF" - dataR);
 
   case(acc_state) is
 
@@ -116,10 +121,19 @@ begin
 
       we <= '0';
       next_read_ptr <= read_ptr + 1;
-      acc_next_state <= ACC_WRITE;
-
+      acc_next_state <= ACC_CALC;
+	  next_pixel_in <= dataR;
+	  
+	when ACC_CALC =>
+	  en <= '0';
+	  we <= '1';
+	  next_pixel_out <= (x"FFFFFFFF" - pixel_in);
+	  acc_next_state <= ACC_WRITE;
+      we <= '1';
+      addr <= write_ptr;
     when ACC_WRITE =>
 
+	  en <= '0';
       we <= '1';
       addr <= write_ptr;
       next_write_ptr <= write_ptr + 1;
