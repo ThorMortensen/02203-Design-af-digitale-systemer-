@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
-| Date         : Thu Nov 16 13:05:54 2017
+| Date         : Mon Nov 27 17:30:58 2017
 | Host         : LAPTOP-AQJ7MP69 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -file top_control_sets_placed.rpt
 | Design       : top
@@ -21,7 +21,7 @@ Table of Contents
 +-------------------------------+-------+
 |             Status            | Count |
 +-------------------------------+-------+
-| Number of unique control sets |    15 |
+| Number of unique control sets |    16 |
 +-------------------------------+-------+
 
 
@@ -31,12 +31,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              11 |           11 |
-| No           | No                    | Yes                    |              26 |           10 |
-| No           | Yes                   | No                     |              31 |           10 |
+| No           | No                    | No                     |              11 |            9 |
+| No           | No                    | Yes                    |              24 |            7 |
+| No           | Yes                   | No                     |              33 |           13 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |              32 |            8 |
-| Yes          | Yes                   | No                     |             189 |           84 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             253 |          134 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 

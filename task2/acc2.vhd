@@ -57,7 +57,7 @@ architecture rtl of acc is
 
 
 -- All internal signals are defined here
-type inv_states is (ACC_IDLE, ACC_INIT, ACC_CALC, ACC_INIT_SHIFT_IN, ACC_INIT_SHIFT_UP, ACC_SHIFT_IN, ACC_SHIFT_UP, ACC_WRITE, ACC_END);
+type inv_states is (ACC_IDLE, ACC_INIT, ACC_CALC, ACC_INIT_SHIFT_IN, ACC_INIT_SHIFT_UP, ACC_SHIFT_IN, ACC_SHIFT_UP, ACC_WRITE, ACC_END, ACC_WAIT);
 type img_byte_arr_t is array (IMG_WIDTH downto 0) of byte_t;
 type img_word_t_byte_arr_t is array (0 to 3) of byte_t;
 type img_calc_buf_t is array (0 to IMG_BUF_DEPTH) of img_byte_arr_t;
@@ -314,8 +314,20 @@ begin
 
     when ACC_END =>
       finish <= '1';
-
-
+    if start = '1' then
+        next_acc_state <= ACC_WAIT;
+    end if;
+	when ACC_WAIT =>
+	  if start = '1' then
+        next_acc_state <= ACC_WAIT;
+	  else
+	  next_acc_state         <= ACC_IDLE;
+      end if;
+	  finish <= '1';
+      next_read_ptr          <= (others => '0');
+      next_write_ptr         <= WRITE_BLOCK_START_ADDR;
+      next_img_shift_in_cntr <= 0;
+      next_img_shift_up_cntr <= 0;
     when others =>
     null;
   end case;

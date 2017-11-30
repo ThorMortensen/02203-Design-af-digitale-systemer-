@@ -9,14 +9,14 @@ z2
 cModel Technology
 Z0 d/home/thor/02203 Design af digitale systemer /task2
 <<<<<<< HEAD
-DEx4 work 3 acc 0 22 kh5khBa`XP`?hcLoGAdG21
+Z1 DEx4 work 3 acc 0 22 kh5khBa`XP`?hcLoGAdG21
 l69
 L47
 VZHLzSnLLfHk^gCVc;E?SM2
 !s100 CO0OWhi2^Eg6068<k2L8Y2
-Z1 =======
-Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
-Z3 DEx4 work 3 acc 0 22 ;EoQQcID2>46c[HCX5;Wk3
+Z2 =======
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+DEx4 work 3 acc 0 22 ;EoQQcID2>46c[HCX5;Wk3
 l107
 L46
 VNIW2ZSglSPIm`HQX[<1[R2
@@ -26,275 +26,286 @@ R0
 !s110 1510833024
 !i10b 1
 !s108 1510833024.000000
-!s90 -reportprogress|300|-quiet|acc2_inverter.vhd|
-!s107 acc2_inverter.vhd|
-R1
-Z4 !s110 1510245290
+Z4 !s90 -reportprogress|300|-quiet|acc2_inverter.vhd|
+Z5 !s107 acc2_inverter.vhd|
+R2
+Z6 !s110 1510245290
 !i10b 1
-Z5 !s108 1510245290.000000
-Z6 !s90 -reportprogress|300|acc2.vhd|
-Z7 !s107 acc2.vhd|
+Z7 !s108 1510245290.000000
+Z8 !s90 -reportprogress|300|acc2.vhd|
+Z9 !s107 acc2.vhd|
 R0
 <<<<<<< HEAD
-Z8 w1510832990
-DPx4 work 5 types 0 22 Y[kNiOheWAVWJ;S?W_MXN1
-Z9 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
-Z10 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
-Z11 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
-Z12 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z10 w1510832990
+Z11 DPx4 work 5 types 0 22 Y[kNiOheWAVWJ;S?W_MXN1
+Z12 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z13 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z14 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z15 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+R3
+Z16 dC:/users/eirik/documents/git/02203-Design-af-digitale-systemer-/task2
+Z17 8acc2_inverter.vhd
+Z18 Facc2_inverter.vhd
 R2
-dC:/users/eirik/documents/git/02203-Design-af-digitale-systemer-/task2
-8acc2_inverter.vhd
-Facc2_inverter.vhd
-R1
-Z13 w1510245288
-Z14 DPx4 work 5 types 0 22 fPN@cWCYYf6zZd:NFTa2L3
-R9
-R10
-R11
+Z19 w1510245288
+Z20 DPx4 work 5 types 0 22 fPN@cWCYYf6zZd:NFTa2L3
 R12
-R2
-R8
-Z15 8acc2.vhd
-Z16 Facc2.vhd
->>>>>>> e590540aa9eb134a890a6689d17332e6a9caea2d
-Z17 OP;C;10.4a;61
-32
-R4
-!i10b 1
-R5
-R6
-R7
-!i113 1
-Z18 o-quiet -O0
-Z19 tExplicit 1
-R0
->>>>>>> e590540aa9eb134a890a6689d17332e6a9caea2d
-!i113 1
-R18
-R19
-R0
-Artl
 R13
 R14
-R9
+R15
+R3
 R10
-R11
+8acc2.vhd
+Facc2.vhd
+>>>>>>> e590540aa9eb134a890a6689d17332e6a9caea2d
+Z21 OP;C;10.4a;61
+32
+R6
+!i10b 1
+R7
+R8
+R9
+!i113 1
+Z22 o-quiet -O0
+Z23 tExplicit 1
+R0
+>>>>>>> e590540aa9eb134a890a6689d17332e6a9caea2d
+!i113 1
+R22
+R23
+R0
+Artl
+R19
+R20
 R12
+R13
+R14
+R15
 >>>>>>> e590540aa9eb134a890a6689d17332e6a9caea2d
 l0
 L29
-Vkh5khBa`XP`?hcLoGAdG21
-!s100 Ac^Nl_16[eYLE<XikdETI2
-R17
+Z24 Vkh5khBa`XP`?hcLoGAdG21
+Z25 !s100 Ac^Nl_16[eYLE<XikdETI2
+R21
 32
 R0
 Eacc
-Z20 w1511445011
-R14
-R9
-R10
+Z26 w1512037411
 R11
 R12
-R2
-Z21 d/home/thor/02203-Design-af-digitale-systemer-/task2
+R13
+R14
 R15
+R3
 R16
+R17
+R18
 l0
-L28
-V;EoQQcID2>46c[HCX5;Wk3
-!s100 om0oNYQ7nIY:Rcfk=3T2R1
-Z22 OV;C;10.5c;63
+L29
+R24
+R25
+R21
 32
-Z23 !s110 1511446267
+Z27 !s110 1512038229
 !i10b 1
-Z24 !s108 1511446267.000000
-R6
-R7
+Z28 !s108 1512038229.000000
+R4
+R5
 !i113 1
-Z25 tExplicit 1 CvgOpt 0
+R22
+R23
 Artl
-R14
-R9
-R10
 R11
 R12
-R2
+R13
+R14
+R15
 R3
-l108
-L46
-V1;d@Fh5`RViiJC@JTZ^5o3
-!s100 OC6;K>5iMj0z8DVBCae2D2
-R22
-32
-R23
-!i10b 1
-R24
-R6
-R7
-!i113 1
-R25
-Eclock
-Z26 w1510835498
-R12
-R2
+R1
+l72
+L47
+VGeX@BeSAA_imfYem?TYZn0
+!s100 HcY0f[Q1WCSRMaX5UGk0l0
 R21
-Z27 8clock.vhd
-Z28 Fclock.vhd
+32
+R27
+!i10b 1
+R28
+R4
+R5
+!i113 1
+R22
+R23
+Eclock
+Z29 w1509001400
+R15
+R3
+R16
+Z30 8clock.vhd
+Z31 Fclock.vhd
 l0
 L21
-VIiD8>]oOE7Y8HoO6mI8VL1
+V3nPJ>93kYmb:E]SFh@[[M3
 !s100 9J;oi<dTF:00lF7L[nR1K0
-R22
+R21
 32
-R23
+R27
 !i10b 1
-R24
-Z29 !s90 -reportprogress|300|clock.vhd|
-Z30 !s107 clock.vhd|
+R28
+Z32 !s90 -reportprogress|300|-quiet|clock.vhd|
+Z33 !s107 clock.vhd|
 !i113 1
-R25
+R22
+R23
 Abehaviour
-R12
-R2
-DEx4 work 5 clock 0 22 IiD8>]oOE7Y8HoO6mI8VL1
+R15
+R3
+DEx4 work 5 clock 0 22 3nPJ>93kYmb:E]SFh@[[M3
 l32
 L31
-VSnb37[jh:Q_e;kAfOZCRE3
+VKHoUQ_Rle5D9KFh75a7bG2
 !s100 A31^AL;?jAk^j0IdDa_Ba2
-R22
-32
-R23
-!i10b 1
-R24
-R29
-R30
-!i113 1
-R25
-Ememory2
-R26
-R11
-R9
-R10
-R12
-R2
 R21
-Z31 8memory2.vhd
-Z32 Fmemory2.vhd
+32
+R27
+!i10b 1
+R28
+R32
+R33
+!i113 1
+R22
+R23
+Ememory2
+Z34 w1510224371
+R14
+R12
+R13
+R15
+R3
+R16
+Z35 8memory2.vhd
+Z36 Fmemory2.vhd
 l0
 L25
-VId49;SnYNA`ah=a_FejW_3
+VL[iW;m5]L0a=RiCB0c^YE2
 !s100 8ITc2A98hCa>d5J8d0X8?3
-R22
+R21
 32
-R23
+R27
 !i10b 1
-R24
-Z33 !s90 -reportprogress|300|memory2.vhd|
-Z34 !s107 memory2.vhd|
+R28
+Z37 !s90 -reportprogress|300|-quiet|memory2.vhd|
+Z38 !s107 memory2.vhd|
 !i113 1
-R25
+R22
+R23
 Abehaviour
-R11
-R9
-R10
+R14
 R12
-R2
-DEx4 work 7 memory2 0 22 Id49;SnYNA`ah=a_FejW_3
+R13
+R15
+R3
+DEx4 work 7 memory2 0 22 L[iW;m5]L0a=RiCB0c^YE2
 l96
 L44
-V1Vb5g?TYlbcA3i2C<W`732
+VmQRaC6g4@7ha1RK0Z?omh3
 !s100 5:@5C;?U?^7Sm9US9jQI@0
-R22
-32
-R23
-!i10b 1
-R24
-R33
-R34
-!i113 1
-R25
-Etestbench
-R26
-R9
-R10
-R14
-R12
-R2
 R21
-Z35 8test2.vhd
-Z36 Ftest2.vhd
-l0
-L26
-VDGI05oa]Ed;>3jhO[h^`S1
-!s100 9aQSdNiCIBEo10eg4i7L91
-R22
 32
-R23
+R27
 !i10b 1
-R24
-Z37 !s90 -reportprogress|300|test2.vhd|
-Z38 !s107 test2.vhd|
-!i113 1
-R25
-Astructure
-R9
-R10
-R14
-R12
-R2
-Z39 DEx4 work 9 testbench 0 22 DGI05oa]Ed;>3jhO[h^`S1
-l80
-L29
-Z40 VTFB1_[n9ihg3dKRadozP<2
-Z41 !s100 08h5a5T0fS;T9d`D_eC>o2
-R22
-32
-R23
-!i10b 1
-R24
+R28
 R37
 R38
 !i113 1
-R25
-Ptypes
-R9
-R10
+R22
+R23
+Etestbench
+R29
 R12
-R2
-R26
+R13
+R11
+R15
+R3
+R16
+Z39 8test2.vhd
+Z40 Ftest2.vhd
+l0
+L26
+VN02IhLRX3z@8nzh[8z>z53
+!s100 9aQSdNiCIBEo10eg4i7L91
 R21
-Z42 8types.vhd
-Z43 Ftypes.vhd
+32
+R27
+!i10b 1
+R28
+Z41 !s90 -reportprogress|300|-quiet|test2.vhd|
+Z42 !s107 test2.vhd|
+!i113 1
+R22
+R23
+Astructure
+R12
+R13
+R11
+R15
+R3
+Z43 DEx4 work 9 testbench 0 22 N02IhLRX3z@8nzh[8z>z53
+l80
+L29
+Z44 V`W=n<h>@YBnA[G?A;o4c11
+Z45 !s100 08h5a5T0fS;T9d`D_eC>o2
+R21
+32
+R27
+!i10b 1
+R28
+R41
+R42
+!i113 1
+R22
+R23
+Ptypes
+R12
+R13
+R15
+R3
+Z46 w1510215391
+R16
+Z47 8types.vhd
+Z48 Ftypes.vhd
 l0
 L35
-VfPN@cWCYYf6zZd:NFTa2L3
+VY[kNiOheWAVWJ;S?W_MXN1
 !s100 KOUaBC<?_37J>EddB12]e1
-R22
+R21
 32
-R23
+R27
 !i10b 1
-R24
-Z44 !s90 -reportprogress|300|types.vhd|
-Z45 !s107 types.vhd|
+R28
+Z49 !s90 -reportprogress|300|-quiet|types.vhd|
+Z50 !s107 types.vhd|
 !i113 1
-R25
+R22
+R23
 Bbody
-R14
-R9
-R10
+R11
 R12
-R2
+R13
+R15
+R3
 l0
 L64
-V:gW5BeYB^D=7NKV7d2^3I1
+V=8gPZ8?`^M9HiieG?]6@?1
 !s100 U32;ohK9Z@66bYBS<okVC3
-R22
+R21
 32
-R23
+R27
 !i10b 1
-R24
-R44
-R45
+R28
+R49
+R50
 !i113 1
-R25
+R22
+R23
+nbody

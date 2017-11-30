@@ -72,21 +72,20 @@ begin
 
 inv_state_reg : process (reset, clk)
 begin
-  if (reset = '1' AND rising_edge(clk)) then
-
-    acc_state <= ACC_IDLE;
-    read_ptr <= (others => '0');
-    write_ptr <= WRITE_BLOCK_START_ADDR;
-	pixel_out <= (others =>'0');
-
-  elsif (rising_edge(clk)) then
-
-    acc_state <= acc_next_state;
-    read_ptr <= next_read_ptr;
-    write_ptr <= next_write_ptr;
-	pixel_out <= next_pixel_out;
-
+  if (rising_edge(clk)) then
+    if (reset = '1') then
+        acc_state <= ACC_IDLE;
+        read_ptr <= (others => '0');
+        write_ptr <= WRITE_BLOCK_START_ADDR;
+	    pixel_out <= (others =>'0');
+    else
+        acc_state <= acc_next_state;
+        read_ptr <= next_read_ptr;
+        write_ptr <= next_write_ptr;
+        pixel_out <= next_pixel_out;
+    end if;
   end if;
+
 end process inv_state_reg;
 
 
@@ -116,14 +115,15 @@ begin
     when ACC_READ =>
 
       we <= '0';
+      
       next_read_ptr <= read_ptr + 1;
-      acc_next_state <= ACC_CALC;
+      acc_next_state <= ACC_Write;
+      --next_pixel_out <= (x"FFFFFFFF" - dataR);
 	when ACC_CALC=>
-	
-	
-		acc_next_state <= ACC_WRITE;
+	   next_pixel_out <= (x"FFFFFFFF" - dataR);
+	   acc_next_state <= ACC_WRITE;
     when ACC_WRITE =>
-
+      en <= '0';
       we <= '1';
       addr <= write_ptr;
       next_write_ptr <= write_ptr + 1;

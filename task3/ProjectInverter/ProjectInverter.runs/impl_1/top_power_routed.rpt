@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
-| Date             : Thu Nov 16 13:06:37 2017
+| Date             : Mon Nov 27 17:31:46 2017
 | Host             : LAPTOP-AQJ7MP69 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.298        |
+| Total On-Chip Power (W)  | 0.270        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.197        |
+| Dynamic (W)              | 0.169        |
 | Device Static (W)        | 0.101        |
 | Effective TJA (C/W)      | 4.6          |
-| Max Ambient (C)          | 83.6         |
-| Junction Temperature (C) | 26.4         |
+| Max Ambient (C)          | 83.8         |
+| Junction Temperature (C) | 26.2         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,17 +53,17 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        5 |       --- |             --- |
-| Slice Logic    |    <0.001 |      871 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      506 |     63400 |            0.80 |
+| Slice Logic    |     0.001 |      905 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      507 |     63400 |            0.80 |
 |   CARRY4       |    <0.001 |       22 |     15850 |            0.14 |
-|   Register     |    <0.001 |      289 |    126800 |            0.23 |
+|   Register     |    <0.001 |      321 |    126800 |            0.25 |
 |   Others       |     0.000 |       15 |       --- |             --- |
-| Signals        |     0.003 |      746 |       --- |             --- |
-| Block RAM      |     0.094 |       64 |       135 |           47.41 |
+| Signals        |     0.006 |      746 |       --- |             --- |
+| Block RAM      |     0.063 |       64 |       135 |           47.41 |
 | PLL            |     0.097 |        1 |         6 |           16.67 |
 | I/O            |    <0.001 |        6 |       210 |            2.86 |
 | Static Power   |     0.101 |          |           |                 |
-| Total          |     0.298 |          |           |                 |
+| Total          |     0.270 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.118 |       0.101 |      0.017 |
+| Vccint    |       1.000 |     0.093 |       0.076 |      0.017 |
 | Vccaux    |       1.800 |     0.067 |       0.049 |      0.018 |
 | Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -82,7 +82,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.009 |       0.008 |      0.002 |
+| Vccbram   |       1.000 |     0.007 |       0.005 |      0.002 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
@@ -144,12 +144,12 @@ Table of Contents
 +------------------------+-----------+
 | Name                   | Power (W) |
 +------------------------+-----------+
-| top                    |     0.197 |
-|   accelerator_inst_0   |     0.003 |
+| top                    |     0.169 |
+|   accelerator_inst_0   |     0.006 |
 |   clock_divider_inst_0 |     0.097 |
 |   controller_inst_0    |     0.001 |
 |   debounce_inst_0      |    <0.001 |
-|   memory3_inst_0       |     0.095 |
+|   memory3_inst_0       |     0.065 |
 |   uart_inst_0          |    <0.001 |
 +------------------------+-----------+
 

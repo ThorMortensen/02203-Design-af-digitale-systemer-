@@ -81,7 +81,7 @@ begin
     read_ptr <= (others => '0');
     write_ptr <= WRITE_BLOCK_START_ADDR;
 	pixel_in <= (others => '0');
-	pixel_out <= (others =>'0');
+	--pixel_out <= (others =>'0');
 
   elsif (rising_edge(clk)) then
 
@@ -89,13 +89,13 @@ begin
     read_ptr <= next_read_ptr;
     write_ptr <= next_write_ptr;
 	pixel_in <= next_pixel_in;
-	pixel_out <= next_pixel_out;
+	--pixel_out <= next_pixel_out;
 
   end if;
 end process inv_state_reg;
 
 
-inv_state_logic : process (acc_state, start,write_ptr,read_ptr,pixel_out,dataR)
+inv_state_logic : process (acc_state, start,write_ptr,read_ptr,dataR)
 begin
 
   acc_next_state <= acc_state;
@@ -105,7 +105,7 @@ begin
   next_write_ptr<=write_ptr;
   next_read_ptr<=read_ptr;
   addr<=read_ptr;
-  next_pixel_out<=pixel_out;-- <= (x"FFFFFFFF" - dataR);
+  --next_pixel_out<=pixel_out;-- <= (x"FFFFFFFF" - dataR);
 
   case(acc_state) is
 
@@ -121,16 +121,16 @@ begin
 
       we <= '0';
       next_read_ptr <= read_ptr + 1;
-      acc_next_state <= ACC_CALC;
+      acc_next_state <= ACC_WRITE;
 	  next_pixel_in <= dataR;
 	  
-	when ACC_CALC =>
-	  en <= '0';
-	  we <= '1';
-	  next_pixel_out <= (x"FFFFFFFF" - pixel_in);
-	  acc_next_state <= ACC_WRITE;
-      we <= '1';
-      addr <= write_ptr;
+	--when ACC_CALC =>
+	  --en <= '0';
+	  --we <= '1';
+	  --next_pixel_out <= (x"FFFFFFFF" - pixel_in);
+	  --acc_next_state <= ACC_WRITE;
+      --we <= '1';
+      --addr <= write_ptr;
     when ACC_WRITE =>
 
 	  en <= '0';
@@ -141,10 +141,9 @@ begin
       if write_ptr = RAM_BLOCK_SIZE then
         acc_next_state <= ACC_IDLE;
         finish <= '1';
+	  else
+        acc_next_state <= ACC_READ;
       end if;
-
-      acc_next_state <= ACC_READ;
-
     when others =>
     null;
 
