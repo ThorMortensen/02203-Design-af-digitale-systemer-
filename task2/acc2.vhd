@@ -107,10 +107,10 @@ end function;
 
 begin
 
- img_result_word <= img_result_reg(IMG_WIDTH - 0) &
-                    img_result_reg(IMG_WIDTH - 1) &
-                    img_result_reg(IMG_WIDTH - 2) &
-                    img_result_reg(IMG_WIDTH - 3);
+ img_result_word <= img_calc_buf(2)(IMG_WIDTH - 0) &
+                    img_calc_buf(2)(IMG_WIDTH - 1) &
+                    img_calc_buf(2)(IMG_WIDTH - 2) &
+                    img_calc_buf(2)(IMG_WIDTH - 3);
 
 
 
@@ -131,18 +131,18 @@ end process;
 --                     pixel_in(7 downto 0)    &
 --                     img_calc_buf(0)(0 to IMG_WIDTH - 4);
 
-shift_up : process(clk)
-begin
-  if rising_edge(clk) then
-    if img_shift_up_en = '1' then
-      img_calc_buf(IMG_BUF_DEPTH)      <= img_calc_buf(IMG_BUF_DEPTH - 1);
-      img_calc_buf(IMG_BUF_DEPTH - 1)  <= img_calc_buf(IMG_BUF_DEPTH - 2);
-    end if;
-  end if;
-end process;
+--shift_up : process(clk)
+--begin
+--  if rising_edge(clk) then
+--    if img_shift_up_en = '1' then
+--      img_calc_buf(IMG_BUF_DEPTH)      <= img_calc_buf(IMG_BUF_DEPTH - 1);
+--      img_calc_buf(IMG_BUF_DEPTH - 1)  <= img_calc_buf(IMG_BUF_DEPTH - 2);
+--    end if;
+--  end if;
+--end process;
 
 
-sobel_reg : process(clk)
+sobel_reg_and_shift_up: process(clk)
 variable Dx  : signed(10 downto 0) := (others => '0');
 variable Dy  : signed(10 downto 0) := (others => '0');
 variable mr1 : signed(10 downto 0) := (others => '0');
@@ -175,7 +175,7 @@ begin
 
         mrRes := abs(signed(Dx)) + abs(signed(Dy));
 
-        img_result_reg(i) <= byte_t( mrRes(10 downto 3) );--+ Dy;
+        img_calc_buf(2)(i) <= byte_t( mrRes(10 downto 3) );--+ Dy;
 
         -- img_result_reg(i) <= byte_t(abs(Dx(10 downto 3)));
 
@@ -184,7 +184,10 @@ begin
 
       -- img_result_reg <= img_calc_buf(1);
     elsif result_shift_en = '1' then
-      img_result_reg <= img_result_reg(IMG_WIDTH - 4 downto 0) & x"00" & x"00" & x"00" & x"00";
+      img_calc_buf(2) <= (img_calc_buf(2)(IMG_WIDTH - 4 downto 0)) & x"00" & x"00" & x"00" & x"00";
+	elsif img_shift_up_en = '1' then
+      img_calc_buf(IMG_BUF_DEPTH)      <= img_calc_buf(IMG_BUF_DEPTH - 1);
+      img_calc_buf(IMG_BUF_DEPTH - 1)  <= img_calc_buf(IMG_BUF_DEPTH - 2);
     end if;
   end if;
 end process;
