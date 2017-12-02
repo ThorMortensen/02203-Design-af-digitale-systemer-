@@ -314,21 +314,24 @@ begin
 
     when ACC_END =>
       finish <= '1';
-    if start = '1' then
-        next_acc_state <= ACC_WAIT;
-    end if;
-	when ACC_WAIT =>
-	  if start = '1' then
-        next_acc_state <= ACC_WAIT;
-	  else
-	  next_acc_state         <= ACC_IDLE;
+
+      if start = '0' then
+          next_acc_state <= ACC_WAIT;
       end if;
+
+	when ACC_WAIT =>
+
+	  if start = '0' then
+      next_acc_state         <= ACC_IDLE;
+    end if;
+
 	  finish <= '1';
-      next_read_ptr          <= (others => '0');
-      next_write_ptr         <= WRITE_BLOCK_START_ADDR;
-      next_img_shift_in_cntr <= 0;
-      next_img_shift_up_cntr <= 0;
-    when others =>
+    next_read_ptr          <= (others => '0');
+    next_write_ptr         <= WRITE_BLOCK_START_ADDR;
+    next_img_shift_in_cntr <= 0;
+    next_img_shift_up_cntr <= 0;
+
+  when others =>
     null;
   end case;
 
