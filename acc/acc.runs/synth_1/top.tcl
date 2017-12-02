@@ -3,6 +3,9 @@
 # 
 
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -21,7 +24,7 @@ read_vhdl -library xil_defaultlib {
   /home/thor/02203-Design-af-digitale-systemer-/task3/clock_divider.vhd
   /home/thor/02203-Design-af-digitale-systemer-/task3/controller.vhd
   /home/thor/02203-Design-af-digitale-systemer-/task3/debounce.vhd
-  /home/thor/02203-Design-af-digitale-systemer-/task3/memory3.vhd
+  /home/thor/02203-Design-af-digitale-systemer-/task3/memory3_be.vhd
   /home/thor/02203-Design-af-digitale-systemer-/task3/uart.vhd
   /home/thor/02203-Design-af-digitale-systemer-/task3/top.vhd
 }

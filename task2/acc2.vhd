@@ -105,6 +105,7 @@ begin
 end function;
 
 
+
 begin
 
  img_result_word <= img_calc_buf(2)(IMG_WIDTH - 0) &
@@ -143,15 +144,30 @@ end process;
 
 
 sobel_reg_and_shift_up: process(clk)
-variable Dx  : signed(10 downto 0) := (others => '0');
-variable Dy  : signed(10 downto 0) := (others => '0');
-variable mr1 : signed(10 downto 0) := (others => '0');
-variable mr2 : signed(10 downto 0) := (others => '0');
-variable mr3 : signed(10 downto 0) := (others => '0');
 
-variable mrRes : signed(10 downto 0) := (others => '0');
-variable mr5 : signed(10 downto 0) := (others => '0');
-variable mr6 : signed(10 downto 0) := (others => '0');
+type img_byte_arr_t is array (IMG_WIDTH downto 1) of signed(10 downto 0);
+
+
+variable Dx     : img_byte_arr_t := (others => (others => '0'));
+variable Dy     : img_byte_arr_t := (others => (others => '0'));
+variable mr1    : img_byte_arr_t := (others => (others => '0'));
+variable mr2    : img_byte_arr_t := (others => (others => '0'));
+variable mr3    : img_byte_arr_t := (others => (others => '0'));
+variable mrRes  : img_byte_arr_t := (others => (others => '0'));
+variable mr4    : img_byte_arr_t := (others => (others => '0'));
+variable mr5    : img_byte_arr_t := (others => (others => '0'));
+variable mr6    : img_byte_arr_t := (others => (others => '0'));
+
+attribute KEEP : string;
+attribute KEEP of Dx    : variable is "true";
+attribute KEEP of Dy    : variable is "true";
+attribute KEEP of mr1   : variable is "true";
+attribute KEEP of mr2   : variable is "true";
+attribute KEEP of mr3   : variable is "true";
+attribute KEEP of mrRes : variable is "true";
+attribute KEEP of mr4   : variable is "true";
+attribute KEEP of mr5   : variable is "true";
+attribute KEEP of mr6   : variable is "true";
 
 constant CONVERTER : unsigned(10 downto 0) := (others => '0');
 
@@ -161,23 +177,78 @@ begin
 
       calcLoop : for i in 1 to IMG_WIDTH - 1 loop
 
-        mr1 := signed(unsigned(img_calc_buf(2)(i + 1)) + CONVERTER) - signed(unsigned(img_calc_buf(2)(i - 1)) + CONVERTER);
-        mr2 := signed(unsigned(img_calc_buf(1)(i + 1)) + CONVERTER) - signed(unsigned(img_calc_buf(1)(i - 1)) + CONVERTER);
-        mr3 := signed(unsigned(img_calc_buf(0)(i + 1)) + CONVERTER) - signed(unsigned(img_calc_buf(0)(i - 1)) + CONVERTER);
+        mr1(i) := signed(unsigned(img_calc_buf(2)(i + 1)) + CONVERTER) - signed(unsigned(img_calc_buf(2)(i - 1)) + CONVERTER);
+        mr2(i) := signed(unsigned(img_calc_buf(1)(i + 1)) + CONVERTER) - signed(unsigned(img_calc_buf(1)(i - 1)) + CONVERTER);
+        mr3(i) := signed(unsigned(img_calc_buf(0)(i + 1)) + CONVERTER) - signed(unsigned(img_calc_buf(0)(i - 1)) + CONVERTER);
 
-        Dx := mr1 + (mr2(9 downto 0) & '0') + mr3;
+        Dx(i) := mr1(i) + (mr2(i)(9 downto 0) & '0') + mr3(i);
 
-        mr1 := signed(unsigned(img_calc_buf(2)(i - 1)) + CONVERTER) - signed(unsigned(img_calc_buf(0)(i - 1)) + CONVERTER);
-        mr2 := signed(unsigned(img_calc_buf(2)(i)    ) + CONVERTER) - signed(unsigned(img_calc_buf(0)(i)    ) + CONVERTER);
-        mr3 := signed(unsigned(img_calc_buf(2)(i + 1)) + CONVERTER) - signed(unsigned(img_calc_buf(0)(i + 1)) + CONVERTER);
+        mr4(i) := signed(unsigned(img_calc_buf(2)(i - 1)) + CONVERTER) - signed(unsigned(img_calc_buf(0)(i - 1)) + CONVERTER);
+        mr5(i) := signed(unsigned(img_calc_buf(2)(i)    ) + CONVERTER) - signed(unsigned(img_calc_buf(0)(i)    ) + CONVERTER);
+        mr6(i) := signed(unsigned(img_calc_buf(2)(i + 1)) + CONVERTER) - signed(unsigned(img_calc_buf(0)(i + 1)) + CONVERTER);
 
-        Dy :=  mr1 + (mr2(9 downto 0) & '0') + mr3;
+        Dy(i) :=  mr4(i) + (mr5(i)(9 downto 0) & '0') + mr6(i);
 
-        mrRes := abs(signed(Dx)) + abs(signed(Dy));
+        mrRes(i) := abs(Dx(i)) + abs(Dy(i));
 
-        img_calc_buf(2)(i) <= byte_t( mrRes(10 downto 3) );--+ Dy;
+        img_calc_buf(2)(i) <= byte_t(mrRes(i)(10 downto 3));--+ Dy;
 
-        -- img_result_reg(i) <= byte_t(abs(Dx(10 downto 3)));
+
+        -- Module acc
+        -- Detailed RTL Component Info :
+        -- +---Adders :
+        -- 	   2 Input     16 Bit       Adders := 2
+        -- 	   4 Input     11 Bit       Adders := 348
+        -- 	   6 Input     11 Bit       Adders := 700
+        -- 	   2 Input     11 Bit       Adders := 2
+        -- 	   3 Input     11 Bit       Adders := 2
+        -- 	   3 Input     10 Bit       Adders := 700
+        -- 	   2 Input      9 Bit       Adders := 1
+        -- 	   2 Input      7 Bit       Adders := 1
+        -- +---Registers :
+        -- 	               32 Bit    Registers := 1
+        -- 	               16 Bit    Registers := 2
+        -- 	                9 Bit    Registers := 1
+        -- 	                8 Bit    Registers := 1056
+        -- 	                7 Bit    Registers := 1
+        -- +---Muxes :
+        -- 	  11 Input     16 Bit        Muxes := 2
+        -- 	   2 Input     16 Bit        Muxes := 1
+        -- 	   2 Input     11 Bit        Muxes := 700
+        -- 	  11 Input      9 Bit        Muxes := 1
+        -- 	   2 Input      8 Bit        Muxes := 698
+        -- 	  11 Input      7 Bit        Muxes := 1
+        -- 	  14 Input      4 Bit        Muxes := 1
+        -- 	   2 Input      1 Bit        Muxes := 7
+        -- 	  11 Input      1 Bit        Muxes := 12
+
+  --       Module acc
+  -- Detailed RTL Component Info :
+  -- +---Adders :
+  -- 	   2 Input     16 Bit       Adders := 2
+  -- 	   4 Input     11 Bit       Adders := 348
+  -- 	   6 Input     11 Bit       Adders := 700
+  -- 	   2 Input     11 Bit       Adders := 2
+  -- 	   3 Input     11 Bit       Adders := 2
+  -- 	   3 Input     10 Bit       Adders := 700
+  -- 	   2 Input      9 Bit       Adders := 1
+  -- 	   2 Input      7 Bit       Adders := 1
+  -- +---Registers :
+  -- 	               32 Bit    Registers := 1
+  -- 	               16 Bit    Registers := 2
+  -- 	                9 Bit    Registers := 1
+  -- 	                8 Bit    Registers := 1056
+  -- 	                7 Bit    Registers := 1
+  -- +---Muxes :
+  -- 	  11 Input     16 Bit        Muxes := 2
+  -- 	   2 Input     16 Bit        Muxes := 1
+  -- 	   2 Input     11 Bit        Muxes := 700
+  -- 	  11 Input      9 Bit        Muxes := 1
+  -- 	   2 Input      8 Bit        Muxes := 698
+  -- 	  11 Input      7 Bit        Muxes := 1
+  -- 	  14 Input      4 Bit        Muxes := 1
+  -- 	   2 Input      1 Bit        Muxes := 7
+  -- 	  11 Input      1 Bit        Muxes := 12
 
       end loop;
 
@@ -185,7 +256,7 @@ begin
       -- img_result_reg <= img_calc_buf(1);
     elsif result_shift_en = '1' then
       img_calc_buf(2) <= (img_calc_buf(2)(IMG_WIDTH - 4 downto 0)) & x"00" & x"00" & x"00" & x"00";
-	elsif img_shift_up_en = '1' then
+	  elsif img_shift_up_en = '1' then
       img_calc_buf(IMG_BUF_DEPTH)      <= img_calc_buf(IMG_BUF_DEPTH - 1);
       img_calc_buf(IMG_BUF_DEPTH - 1)  <= img_calc_buf(IMG_BUF_DEPTH - 2);
     end if;

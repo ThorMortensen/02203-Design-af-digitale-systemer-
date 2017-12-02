@@ -2,8 +2,8 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:10 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Thu Nov 23 14:51:42 2017
-# Process ID: 32424
+# Start of session at: Sat Dec  2 21:35:45 2017
+# Process ID: 10672
 # Current directory: /home/thor/02203-Design-af-digitale-systemer-/acc/acc.runs/synth_1
 # Command line: vivado -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: /home/thor/02203-Design-af-digitale-systemer-/acc/acc.runs/synth_1/top.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t-csg324'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t-csg324'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 32445 
+INFO: Helper process launched with PID 10700 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1151.637 ; gain = 53.988 ; free physical = 508 ; free virtual = 6635
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1151.645 ; gain = 53.988 ; free physical = 2746 ; free virtual = 7804
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'top' [/home/thor/02203-Design-af-digitale-systemer-/task3/top.vhd:32]
 INFO: [Synth 8-638] synthesizing module 'clock_divider' [/home/thor/02203-Design-af-digitale-systemer-/task3/clock_divider.vhd:25]
@@ -52,17 +52,117 @@ INFO: [Synth 8-256] done synthesizing module 'clock_divider' (1#1) [/home/thor/0
 INFO: [Synth 8-638] synthesizing module 'debounce' [/home/thor/02203-Design-af-digitale-systemer-/task3/debounce.vhd:16]
 INFO: [Synth 8-256] done synthesizing module 'debounce' (2#1) [/home/thor/02203-Design-af-digitale-systemer-/task3/debounce.vhd:16]
 INFO: [Synth 8-638] synthesizing module 'acc' [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:46]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:151]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:152]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:153]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:154]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:155]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:156]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:157]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:158]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:159]
 WARNING: [Synth 8-5856] 3D RAM img_calc_buf_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
-WARNING: [Synth 8-6014] Unused sequential element mr1_reg was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:164]
-WARNING: [Synth 8-6014] Unused sequential element mr2_reg was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:165]
-WARNING: [Synth 8-6014] Unused sequential element mr3_reg was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:166]
-WARNING: [Synth 8-6014] Unused sequential element Dx_reg was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:168]
-WARNING: [Synth 8-6014] Unused sequential element Dy_reg was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:174]
-WARNING: [Synth 8-6014] Unused sequential element mrRes_reg was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-WARNING: [Synth 8-6014] Unused sequential element mr5_reg was removed. 
-WARNING: [Synth 8-6014] Unused sequential element mr6_reg was removed. 
-WARNING: [Synth 8-6014] Unused sequential element CONVERTER_reg was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:164]
-WARNING: [Synth 8-6014] Unused sequential element result_shift_en_reg was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:186]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[350] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[349] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[348] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[347] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[346] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[345] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[344] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[343] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[342] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[341] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[340] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[339] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[338] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[337] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[336] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[335] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[334] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[333] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[332] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[331] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[330] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[329] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[328] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[327] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[326] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[325] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[324] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[323] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[322] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[321] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[320] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[319] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[318] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[317] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[316] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[315] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[314] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[313] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[312] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[311] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[310] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[309] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[308] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[307] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[306] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[305] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[304] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[303] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[302] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[301] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[300] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[299] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[298] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[297] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[296] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[295] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[294] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[293] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[292] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[291] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[290] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[289] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[288] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[287] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[286] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[285] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[284] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[283] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[282] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[281] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[280] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[279] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[278] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[277] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[276] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[275] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[274] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[273] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[272] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[271] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[270] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[269] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[268] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[267] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[266] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[265] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[264] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[263] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[262] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[261] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[260] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[259] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[258] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[257] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[256] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[255] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[254] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[253] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[252] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element mr1_reg[251] was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:180]
+INFO: [Common 17-14] Message 'Synth 8-6014' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-256] done synthesizing module 'acc' (3#1) [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:46]
 INFO: [Synth 8-638] synthesizing module 'controller' [/home/thor/02203-Design-af-digitale-systemer-/task3/controller.vhd:38]
 	Parameter MEMORY_ADDR_SIZE bound to: 16 - type: integer 
@@ -71,12 +171,12 @@ INFO: [Synth 8-638] synthesizing module 'uart' [/home/thor/02203-Design-af-digit
 	Parameter baud bound to: 115200 - type: integer 
 	Parameter clock_frequency bound to: 50000000 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'uart' (5#1) [/home/thor/02203-Design-af-digitale-systemer-/task3/uart.vhd:67]
-INFO: [Synth 8-638] synthesizing module 'memory3' [/home/thor/02203-Design-af-digitale-systemer-/task3/memory3.vhd:34]
+INFO: [Synth 8-638] synthesizing module 'memory3' [/home/thor/02203-Design-af-digitale-systemer-/task3/memory3_be.vhd:35]
 	Parameter ADDR_SIZE bound to: 16 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'memory3' (6#1) [/home/thor/02203-Design-af-digitale-systemer-/task3/memory3.vhd:34]
+INFO: [Synth 8-256] done synthesizing module 'memory3' (6#1) [/home/thor/02203-Design-af-digitale-systemer-/task3/memory3_be.vhd:35]
 INFO: [Synth 8-256] done synthesizing module 'top' (7#1) [/home/thor/02203-Design-af-digitale-systemer-/task3/top.vhd:32]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1361.145 ; gain = 263.496 ; free physical = 391 ; free virtual = 6521
+Finished RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1439.293 ; gain = 341.637 ; free physical = 2565 ; free virtual = 7630
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -86,7 +186,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1361.145 ; gain = 263.496 ; free physical = 417 ; free virtual = 6547
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1439.293 ; gain = 341.637 ; free physical = 2609 ; free virtual = 7673
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -106,140 +206,137 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   PLLE2_BASE => PLLE2_ADV: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1656.785 ; gain = 0.000 ; free physical = 130 ; free virtual = 6236
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1690.613 ; gain = 0.000 ; free physical = 2317 ; free virtual = 7401
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 1656.785 ; gain = 559.137 ; free physical = 232 ; free virtual = 6339
+Finished Constraint Validation : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1690.613 ; gain = 592.957 ; free physical = 2425 ; free virtual = 7509
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 1656.785 ; gain = 559.137 ; free physical = 232 ; free virtual = 6339
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1690.613 ; gain = 592.957 ; free physical = 2425 ; free virtual = 7509
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 1656.785 ; gain = 559.137 ; free physical = 234 ; free virtual = 6341
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1690.613 ; gain = 592.957 ; free physical = 2427 ; free virtual = 7511
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "q_zero" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-6014] Unused sequential element q_reg_reg was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task3/debounce.vhd:43]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:176]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:192]
 INFO: [Common 17-14] Message 'Synth 8-5818' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-802] inferred FSM for state register 'acc_state_reg' in module 'acc'
-WARNING: [Synth 8-6014] Unused sequential element acc_state_reg was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:196]
 INFO: [Synth 8-5546] ROM "img_shift_in_en" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "img_shift_in_en" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "next_acc_state" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5544] ROM "we_intl" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "finish" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "img_shift_up_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "calc_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "finish" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "we_intl" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "next_acc_state" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "next_acc_state" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'controller'
-WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task3/controller.vhd:231]
 INFO: [Synth 8-5546] ROM "mem_en" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "data_buffer_next" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "addr_count_next" won't be mapped to RAM because it is too sparse
@@ -267,8 +364,6 @@ INFO: [Synth 8-5544] ROM "uart_rx_bit" won't be mapped to Block RAM because addr
 INFO: [Synth 8-5544] ROM "uart_rx_bit_tick" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "uart_rx_bit_spacing" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "tx_baud_tick" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-6014] Unused sequential element acc_state_reg was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:196]
-WARNING: [Synth 8-6014] Unused sequential element acc_state_reg was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:196]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -277,15 +372,14 @@ WARNING: [Synth 8-6014] Unused sequential element acc_state_reg was removed.  [/
                 acc_calc |                             0010 |                             0010
                acc_write |                             0011 |                             0111
                  acc_end |                             0100 |                             1000
-            acc_shift_up |                             0101 |                             0110
-            acc_shift_in |                             0110 |                             0101
-       acc_init_shift_in |                             0111 |                             0011
-       acc_init_shift_up |                             1000 |                             0100
+                acc_wait |                             0101 |                             1001
+                  iSTATE |                             0110 |                             1111
+            acc_shift_up |                             0111 |                             0110
+            acc_shift_in |                             1000 |                             0101
+       acc_init_shift_in |                             1001 |                             0011
+       acc_init_shift_up |                             1010 |                             0100
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'acc_state_reg' using encoding 'sequential' in module 'acc'
-WARNING: [Synth 8-6014] Unused sequential element acc_state_reg was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:196]
-WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task3/controller.vhd:231]
-WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task3/controller.vhd:231]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -306,30 +400,30 @@ WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [/home
           store_download |                  100000000000000 |                             1000
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'controller'
-WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task3/controller.vhd:231]
 INFO: [Synth 8-3971] The signal ram_reg was recognized as a true dual port RAM template.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:41 ; elapsed = 00:00:41 . Memory (MB): peak = 1656.785 ; gain = 559.137 ; free physical = 182 ; free virtual = 6291
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 1690.613 ; gain = 592.957 ; free physical = 2341 ; free virtual = 7448
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+--------------+------------+----------+
 |      |RTL Partition |Replication |Instances |
 +------+--------------+------------+----------+
-|1     |acc__GB0      |           1|     21526|
-|2     |acc__GB1      |           1|     17070|
-|3     |acc__GB2      |           1|     21005|
-|4     |acc__GB3      |           1|      5894|
-|5     |acc__GB4      |           1|      8948|
-|6     |acc__GB5      |           1|     20492|
-|7     |acc__GB6      |           1|     25028|
-|8     |acc__GB7      |           1|     23850|
-|9     |acc__GB8      |           1|     10528|
-|10    |acc__GB9      |           1|     19526|
-|11    |acc__GB10     |           1|      7185|
-|12    |acc__GB11     |           1|      8839|
-|13    |acc__GB12     |           1|     10347|
-|14    |top__GC0      |           1|      1786|
+|1     |acc__GB0      |           1|     22210|
+|2     |acc__GB1      |           1|      7224|
+|3     |acc__GB2      |           1|     14352|
+|4     |acc__GB3      |           1|     11502|
+|5     |acc__GB4      |           1|     19802|
+|6     |acc__GB5      |           1|     20350|
+|7     |acc__GB6      |           1|     24778|
+|8     |acc__GB7      |           1|     23382|
+|9     |acc__GB8      |           1|      6678|
+|10    |acc__GB9      |           1|      8573|
+|11    |acc__GB10     |           1|     20460|
+|12    |acc__GB11     |           1|      7794|
+|13    |acc__GB12     |           1|      9656|
+|14    |acc__GB13     |           1|     14478|
+|15    |top__GC0      |           1|      1786|
 +------+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -338,11 +432,10 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input     20 Bit       Adders := 1     
 	   2 Input     16 Bit       Adders := 3     
-	   2 Input     11 Bit       Adders := 347   
-	   6 Input     11 Bit       Adders := 369   
-	   3 Input     11 Bit       Adders := 1007  
-	   5 Input     11 Bit       Adders := 2     
-	   4 Input     11 Bit       Adders := 3     
+	   6 Input     11 Bit       Adders := 700   
+	   4 Input     11 Bit       Adders := 348   
+	   2 Input     11 Bit       Adders := 2     
+	   3 Input     11 Bit       Adders := 2     
 	   3 Input     10 Bit       Adders := 700   
 	   2 Input     10 Bit       Adders := 1     
 	   2 Input      9 Bit       Adders := 1     
@@ -356,7 +449,7 @@ Detailed RTL Component Info :
 	               16 Bit    Registers := 3     
 	               10 Bit    Registers := 1     
 	                9 Bit    Registers := 1     
-	                8 Bit    Registers := 1410  
+	                8 Bit    Registers := 1058  
 	                7 Bit    Registers := 1     
 	                6 Bit    Registers := 1     
 	                4 Bit    Registers := 1     
@@ -369,25 +462,26 @@ Detailed RTL Component Info :
 	  15 Input     32 Bit        Muxes := 2     
 	   2 Input     20 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 1     
+	  11 Input     16 Bit        Muxes := 2     
 	  15 Input     16 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 1     
 	  33 Input     15 Bit        Muxes := 1     
 	   2 Input     11 Bit        Muxes := 700   
-	   9 Input      9 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 347   
+	  11 Input      9 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 698   
 	  15 Input      8 Bit        Muxes := 1     
 	   4 Input      8 Bit        Muxes := 2     
-	   9 Input      7 Bit        Muxes := 1     
+	  11 Input      7 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 1     
-	  12 Input      4 Bit        Muxes := 1     
+	  14 Input      4 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 1     
 	   4 Input      3 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 2     
 	   7 Input      2 Bit        Muxes := 1     
 	   4 Input      2 Bit        Muxes := 2     
 	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 22    
-	   9 Input      1 Bit        Muxes := 11    
+	  11 Input      1 Bit        Muxes := 12    
+	   2 Input      1 Bit        Muxes := 24    
 	   4 Input      1 Bit        Muxes := 15    
 	  15 Input      1 Bit        Muxes := 5     
 ---------------------------------------------------------------------------------
@@ -401,11 +495,10 @@ Module acc
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     16 Bit       Adders := 2     
-	   2 Input     11 Bit       Adders := 347   
-	   6 Input     11 Bit       Adders := 369   
-	   3 Input     11 Bit       Adders := 1007  
-	   5 Input     11 Bit       Adders := 2     
-	   4 Input     11 Bit       Adders := 3     
+	   6 Input     11 Bit       Adders := 700   
+	   4 Input     11 Bit       Adders := 348   
+	   2 Input     11 Bit       Adders := 2     
+	   3 Input     11 Bit       Adders := 2     
 	   3 Input     10 Bit       Adders := 700   
 	   2 Input      9 Bit       Adders := 1     
 	   2 Input      7 Bit       Adders := 1     
@@ -413,17 +506,18 @@ Detailed RTL Component Info :
 	               32 Bit    Registers := 1     
 	               16 Bit    Registers := 2     
 	                9 Bit    Registers := 1     
-	                8 Bit    Registers := 1408  
+	                8 Bit    Registers := 1056  
 	                7 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 1     
+	  11 Input     16 Bit        Muxes := 2     
 	   2 Input     11 Bit        Muxes := 700   
-	   9 Input      9 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 347   
-	   9 Input      7 Bit        Muxes := 1     
-	  12 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 5     
-	   9 Input      1 Bit        Muxes := 11    
+	  11 Input      9 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 698   
+	  11 Input      7 Bit        Muxes := 1     
+	  14 Input      4 Bit        Muxes := 1     
+	  11 Input      1 Bit        Muxes := 12    
+	   2 Input      1 Bit        Muxes := 7     
 Module debounce 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -507,23 +601,12 @@ INFO: [Synth 8-5546] ROM "controller_inst_0/addr_count_next" won't be mapped to 
 INFO: [Synth 8-5546] ROM "controller_inst_0/mem_en" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "controller_inst_0/addr_count_next" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "uart_inst_0/tx_baud_tick" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-6014] Unused sequential element debounce_inst_0/q_reg_reg was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task3/debounce.vhd:43]
 INFO: [Synth 8-3971] The signal memory3_inst_0/ram_reg was recognized as a true dual port RAM template.
 INFO: [Synth 8-5546] ROM "next_acc_state" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "img_shift_in_en" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "img_shift_in_en" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-6014] Unused sequential element write_ptr_reg was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:198]
-WARNING: [Synth 8-6014] Unused sequential element read_ptr_reg was removed.  [/home/thor/02203-Design-af-digitale-systemer-/task2/acc2.vhd:197]
-INFO: [Synth 8-3886] merging instance 'img_result_reg_reg[0][0]' (FDRE) to 'img_result_reg_reg[0][1]'
-INFO: [Synth 8-3886] merging instance 'img_result_reg_reg[0][1]' (FDRE) to 'img_result_reg_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'img_result_reg_reg[0][2]' (FDRE) to 'img_result_reg_reg[0][3]'
-INFO: [Synth 8-3886] merging instance 'img_result_reg_reg[0][3]' (FDRE) to 'img_result_reg_reg[0][4]'
-INFO: [Synth 8-3886] merging instance 'img_result_reg_reg[0][4]' (FDRE) to 'img_result_reg_reg[0][5]'
-INFO: [Synth 8-3886] merging instance 'img_result_reg_reg[0][5]' (FDRE) to 'img_result_reg_reg[0][6]'
-INFO: [Synth 8-3886] merging instance 'img_result_reg_reg[0][6]' (FDRE) to 'img_result_reg_reg[0][7]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\img_result_reg_reg[0][7] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:28 ; elapsed = 00:02:34 . Memory (MB): peak = 1769.785 ; gain = 672.137 ; free physical = 356 ; free virtual = 4163
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:21 ; elapsed = 00:02:10 . Memory (MB): peak = 1694.535 ; gain = 596.879 ; free physical = 517 ; free virtual = 5639
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -545,103 +628,133 @@ Report RTL Partitions:
 +------+--------------+------------+----------+
 |      |RTL Partition |Replication |Instances |
 +------+--------------+------------+----------+
-|1     |acc__GB0      |           1|     15275|
-|2     |acc__GB1      |           1|     12158|
-|3     |acc__GB2      |           1|     14919|
-|4     |acc__GB3      |           1|      4205|
-|5     |acc__GB4      |           1|      6364|
-|6     |acc__GB5      |           1|     14586|
-|7     |acc__GB6      |           1|     17802|
-|8     |acc__GB7      |           1|     16939|
-|9     |acc__GB8      |           1|      7683|
-|10    |acc__GB9      |           1|     13855|
-|11    |acc__GB10     |           1|      5114|
-|12    |acc__GB11     |           1|      6508|
-|13    |acc__GB12     |           1|      7732|
-|14    |top__GC0      |           1|      1045|
+|1     |acc__GB0      |           1|     16676|
+|2     |acc__GB1      |           1|      5432|
+|3     |acc__GB2      |           1|     10768|
+|4     |acc__GB3      |           1|      8652|
+|5     |acc__GB4      |           1|     14876|
+|6     |acc__GB5      |           1|     15297|
+|7     |acc__GB6      |           1|     18628|
+|8     |acc__GB7      |           1|     17548|
+|9     |acc__GB8      |           1|      5028|
+|10    |acc__GB9      |           1|      6473|
+|11    |acc__GB10     |           1|     15368|
+|12    |acc__GB11     |           1|      5852|
+|13    |acc__GB12     |           1|      7264|
+|14    |acc__GB13     |           1|     10916|
+|15    |top__GC0      |           1|      1045|
 +------+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:37 ; elapsed = 00:02:43 . Memory (MB): peak = 1904.074 ; gain = 806.426 ; free physical = 188 ; free virtual = 4028
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:30 ; elapsed = 00:02:19 . Memory (MB): peak = 1772.902 ; gain = 675.246 ; free physical = 385 ; free virtual = 5513
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:57 ; elapsed = 00:03:04 . Memory (MB): peak = 2018.535 ; gain = 920.887 ; free physical = 176 ; free virtual = 3919
+Finished Timing Optimization : Time (s): cpu = 00:01:59 ; elapsed = 00:02:47 . Memory (MB): peak = 1855.199 ; gain = 757.543 ; free physical = 376 ; free virtual = 5494
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+--------------+------------+----------+
 |      |RTL Partition |Replication |Instances |
 +------+--------------+------------+----------+
-|1     |acc__GB0      |           1|     15269|
-|2     |acc__GB1      |           1|     12146|
-|3     |acc__GB2      |           1|     14913|
-|4     |acc__GB3      |           1|      4199|
-|5     |acc__GB4      |           1|      6364|
-|6     |acc__GB5      |           1|     14580|
-|7     |acc__GB6      |           1|     17796|
-|8     |acc__GB7      |           1|     16933|
-|9     |acc__GB8      |           1|      7683|
-|10    |acc__GB9      |           1|     13850|
-|11    |acc__GB10     |           1|      5111|
-|12    |acc__GB11     |           1|      6508|
-|13    |acc__GB12     |           1|      7724|
-|14    |top__GC0      |           1|      1045|
+|1     |acc__GB0      |           1|     16676|
+|2     |acc__GB1      |           1|      5432|
+|3     |acc__GB3      |           1|      8652|
+|4     |acc__GB6      |           1|     18628|
+|5     |acc__GB12     |           1|      7264|
+|6     |acc__GB13     |           1|     10916|
+|7     |top__GC0      |           1|      1045|
+|8     |top_GT0       |           1|     26065|
+|9     |top_GT0__1    |           1|     19944|
+|10    |top_GT0__2    |           1|     23981|
+|11    |top_GT0__3    |           1|     21220|
 +------+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_5 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_5 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_6 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_6 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_7 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_7 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_8 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_8 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_9 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_9 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_10 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_10 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_11 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_11 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_12 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_12 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_13 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_13 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_14 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_14 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_15 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_15 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_16 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_16 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_17 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_17 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_18 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_18 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_19 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_19 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_20 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_20 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_21 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_21 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_22 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_22 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_23 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_23 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_24 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_24 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_25 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_25 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_26 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_26 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_27 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_27 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_28 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_28 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_29 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_29 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_30 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_30 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_31 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_31 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:38 ; elapsed = 00:04:14 . Memory (MB): peak = 2030.461 ; gain = 932.812 ; free physical = 147 ; free virtual = 3450
+Finished Technology Mapping : Time (s): cpu = 00:02:26 ; elapsed = 00:03:41 . Memory (MB): peak = 1867.125 ; gain = 769.469 ; free physical = 200 ; free virtual = 4980
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+--------------+------------+----------+
 |      |RTL Partition |Replication |Instances |
 +------+--------------+------------+----------+
-|1     |acc__GB0      |           1|      5580|
-|2     |acc__GB1      |           1|      4482|
-|3     |acc__GB2      |           1|      5479|
-|4     |acc__GB5      |           1|      5368|
-|5     |acc__GB6      |           1|      6544|
-|6     |acc__GB7      |           1|      6208|
-|7     |acc__GB9      |           1|      5076|
+|1     |acc__GB0      |           1|      4622|
+|2     |acc__GB6      |           1|      5278|
+|3     |acc__GB13     |           1|      3096|
+|4     |top_GT0       |           1|      7350|
+|5     |top_GT0__1    |           1|      5584|
+|6     |top_GT0__2    |           1|      6708|
+|7     |top_GT0__3    |           1|      5906|
 +------+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -691,7 +804,7 @@ INFO: [Synth 8-4480] The timing for the instance memory3_inst_0/ram_reg_1_31 (im
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:46 ; elapsed = 00:04:22 . Memory (MB): peak = 2030.461 ; gain = 932.812 ; free physical = 216 ; free virtual = 3549
+Finished IO Insertion : Time (s): cpu = 00:02:37 ; elapsed = 00:03:51 . Memory (MB): peak = 1878.742 ; gain = 781.086 ; free physical = 233 ; free virtual = 5004
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -704,7 +817,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:46 ; elapsed = 00:04:23 . Memory (MB): peak = 2030.461 ; gain = 932.812 ; free physical = 215 ; free virtual = 3549
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:38 ; elapsed = 00:03:52 . Memory (MB): peak = 1878.742 ; gain = 781.086 ; free physical = 231 ; free virtual = 5003
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -716,25 +829,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:01 ; elapsed = 00:04:39 . Memory (MB): peak = 2030.461 ; gain = 932.812 ; free physical = 205 ; free virtual = 3510
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:48 ; elapsed = 00:04:03 . Memory (MB): peak = 1878.742 ; gain = 781.086 ; free physical = 220 ; free virtual = 4993
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:03:02 ; elapsed = 00:04:40 . Memory (MB): peak = 2030.461 ; gain = 932.812 ; free physical = 205 ; free virtual = 3510
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:49 ; elapsed = 00:04:03 . Memory (MB): peak = 1878.742 ; gain = 781.086 ; free physical = 220 ; free virtual = 4993
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:03:02 ; elapsed = 00:04:40 . Memory (MB): peak = 2030.461 ; gain = 932.812 ; free physical = 196 ; free virtual = 3509
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:50 ; elapsed = 00:04:05 . Memory (MB): peak = 1878.742 ; gain = 781.086 ; free physical = 218 ; free virtual = 4992
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:03:03 ; elapsed = 00:04:41 . Memory (MB): peak = 2030.461 ; gain = 932.812 ; free physical = 196 ; free virtual = 3509
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:50 ; elapsed = 00:04:05 . Memory (MB): peak = 1878.742 ; gain = 781.086 ; free physical = 217 ; free virtual = 4992
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -752,17 +865,17 @@ Report Cell Usage:
 +------+-----------+------+
 |1     |BUFG       |     1|
 |2     |CARRY4     |  7372|
-|3     |LUT1       |  1863|
-|4     |LUT2       | 12763|
-|5     |LUT3       |  9939|
-|6     |LUT4       |  8306|
-|7     |LUT5       |  3559|
-|8     |LUT6       |  4276|
+|3     |LUT1       |  2868|
+|4     |LUT2       |  6752|
+|5     |LUT3       | 10625|
+|6     |LUT4       | 13437|
+|7     |LUT5       |  6674|
+|8     |LUT6       |    79|
 |9     |PLLE2_BASE |     1|
 |10    |RAMB36E1   |    32|
 |11    |RAMB36E1_1 |    32|
 |12    |FDCE       |    24|
-|13    |FDRE       | 11439|
+|13    |FDRE       |  8633|
 |14    |FDSE       |    10|
 |15    |IBUF       |     4|
 |16    |OBUF       |     2|
@@ -772,33 +885,34 @@ Report Instance Areas:
 +------+-----------------------+--------------+------+
 |      |Instance               |Module        |Cells |
 +------+-----------------------+--------------+------+
-|1     |top                    |              | 59623|
-|2     |  accelerator_inst_0   |acc           | 41302|
+|1     |top                    |              | 56546|
+|2     |  accelerator_inst_0   |acc           | 53254|
 |3     |  clock_divider_inst_0 |clock_divider |     1|
-|4     |  controller_inst_0    |controller    |   222|
+|4     |  controller_inst_0    |controller    |   220|
 |5     |  debounce_inst_0      |debounce      |   104|
 |6     |  memory3_inst_0       |memory3       |    75|
-|7     |  uart_inst_0          |uart          |   137|
+|7     |  uart_inst_0          |uart          |   143|
 +------+-----------------------+--------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:03:03 ; elapsed = 00:04:41 . Memory (MB): peak = 2030.461 ; gain = 932.812 ; free physical = 196 ; free virtual = 3509
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:50 ; elapsed = 00:04:05 . Memory (MB): peak = 1878.742 ; gain = 781.086 ; free physical = 217 ; free virtual = 4992
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 12 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:54 ; elapsed = 00:04:37 . Memory (MB): peak = 2030.461 ; gain = 637.172 ; free physical = 2464 ; free virtual = 5913
-Synthesis Optimization Complete : Time (s): cpu = 00:03:03 ; elapsed = 00:04:46 . Memory (MB): peak = 2030.461 ; gain = 932.812 ; free physical = 2465 ; free virtual = 5914
+Synthesis finished with 0 errors, 0 critical warnings and 10 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:41 ; elapsed = 00:03:59 . Memory (MB): peak = 1882.652 ; gain = 533.676 ; free physical = 2535 ; free virtual = 7351
+Synthesis Optimization Complete : Time (s): cpu = 00:02:50 ; elapsed = 00:04:08 . Memory (MB): peak = 1882.652 ; gain = 784.996 ; free physical = 2540 ; free virtual = 7352
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 7441 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'top' is not ideal for floorplanning, since the cellview 'acc' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   PLLE2_BASE => PLLE2_ADV: 1 instances
 
-257 Infos, 23 Warnings, 0 Critical Warnings and 0 Errors encountered.
+291 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:03:21 ; elapsed = 00:05:03 . Memory (MB): peak = 2042.547 ; gain = 957.492 ; free physical = 2365 ; free virtual = 5873
+synth_design: Time (s): cpu = 00:03:05 ; elapsed = 00:04:21 . Memory (MB): peak = 1894.750 ; gain = 809.688 ; free physical = 2488 ; free virtual = 7322
 INFO: [Common 17-1381] The checkpoint '/home/thor/02203-Design-af-digitale-systemer-/acc/acc.runs/synth_1/top.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 2066.559 ; gain = 24.012 ; free physical = 2295 ; free virtual = 5850
-report_utilization: Time (s): cpu = 00:00:00.43 ; elapsed = 00:00:00.54 . Memory (MB): peak = 2066.559 ; gain = 0.000 ; free physical = 2283 ; free virtual = 5849
-INFO: [Common 17-206] Exiting Vivado at Thu Nov 23 14:57:03 2017...
+write_checkpoint: Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 1918.762 ; gain = 24.012 ; free physical = 2470 ; free virtual = 7312
+report_utilization: Time (s): cpu = 00:00:00.43 ; elapsed = 00:00:00.52 . Memory (MB): peak = 1918.762 ; gain = 0.000 ; free physical = 2458 ; free virtual = 7309
+INFO: [Common 17-206] Exiting Vivado at Sat Dec  2 21:40:23 2017...
