@@ -318,7 +318,7 @@ begin
     when ACC_END =>
       finish <= '1';
 
-      if start = '0' then
+      if start = '1' then
           next_acc_state <= ACC_WAIT;
       end if;
 
