@@ -158,17 +158,6 @@ variable mr4    : img_byte_arr_t := (others => (others => '0'));
 variable mr5    : img_byte_arr_t := (others => (others => '0'));
 variable mr6    : img_byte_arr_t := (others => (others => '0'));
 
-attribute KEEP : string;
-attribute KEEP of Dx    : variable is "true";
-attribute KEEP of Dy    : variable is "true";
-attribute KEEP of mr1   : variable is "true";
-attribute KEEP of mr2   : variable is "true";
-attribute KEEP of mr3   : variable is "true";
-attribute KEEP of mrRes : variable is "true";
-attribute KEEP of mr4   : variable is "true";
-attribute KEEP of mr5   : variable is "true";
-attribute KEEP of mr6   : variable is "true";
-
 constant CONVERTER : unsigned(10 downto 0) := (others => '0');
 
 begin
@@ -193,6 +182,24 @@ begin
 
         img_calc_buf(2)(i) <= byte_t(mrRes(i)(10 downto 3));--+ Dy;
 
+
+
+byte nr 0 =  [START_DELIM]
+byte nr 1 =  [TYPE]
+byte nr 2 =  [ID]
+byte nr 3 =  [ADDR_64 0]
+byte nr 4 =  [ADDR_64 1]
+byte nr 5 =  [ADDR_64 2]
+byte nr 6 =  [ADDR_64 3]
+byte nr 7 =  [ADDR_64 4]
+byte nr 8 =  [ADDR_64 5]
+byte nr 9 =  [ADDR_64 6]
+byte nr 10 = [ADDR_64 7]
+byte nr 11 = [ADDR_16 0]
+byte nr 12 = [ADDR_16 1]
+byte nr 13 = [CMD_OPT]
+byte nr 14 = [AT_CMD 0]
+byte nr 15 = [AT_CMD 1]
 
         -- Module acc
         -- Detailed RTL Component Info :
